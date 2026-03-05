@@ -115,7 +115,10 @@ All three must be YES. If any is NO, work with them to fix it or acknowledge it'
 - Confirm: "Your Rock ID will be {id}. Happy with that?"
 
 ### Step 7: Save
-- Create the rock YAML file at `/rocks/{quarter}/{slug}/{rock-slug}.yml`
+- Create the rock YAML file at `rocks/Q{n}_{year}/{slug}/{rock-slug}.yml`
+- Quarter folder format is `Q{n}_{year}` e.g. `Q1_2026`, `Q2_2026`
+- Owner subfolder is their email slug e.g. `paul`, `andy`, `grahamb`
+- Rock filename is a slugified version of the title e.g. `finance-system.yml`
 - Git add, commit with message "Add rock: {id} — {title}", and push
 - Confirm: "Rock saved and synced. Here's your summary:" then display it nicely
 
