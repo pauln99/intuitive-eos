@@ -3,8 +3,8 @@ name: Paul Nixon
 initials: PN
 role: CEO
 department: Company
-coaching_style: null
-review_day: null
+coaching_style: socratic
+review_day: monday
 is_admin: true
 reports_to: null
 active: true
