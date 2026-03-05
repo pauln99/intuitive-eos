@@ -1,0 +1,19 @@
+# Local user config (never committed)
+.teamtraction/
+
+# Service account credentials
+*.json
+!package.json
+!package-lock.json
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
