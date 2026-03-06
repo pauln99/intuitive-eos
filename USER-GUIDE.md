@@ -1,130 +1,154 @@
-# TeamTraction — User Guide
+# TeamTraction — Getting Started
 
-## What is this?
+Welcome to TeamTraction, your EOS leadership companion. It runs inside Claude Code and helps you define sharp quarterly Rocks, stay on track with weekly reviews, and think through problems using proven EOS tools.
 
-TeamTraction is your AI-powered EOS Rock management tool. It runs inside Claude Code CLI and helps you:
+This guide will get you up and running in about 5 minutes.
 
-- Create sharp, measurable quarterly Rocks
-- Track progress with weekly reviews
-- Push updates to the team's Google Sheet automatically
+---
 
-## Prerequisites
+## What you'll need
 
-1. **Claude Code CLI** installed and working
-2. **Git** access to the `intuitive-eos` repo
-3. **Anthropic licence** (you should already have this)
+1. **Claude Code CLI** — installed and working ([install guide](https://claude.ai/code))
+2. **Git access** to the `intuitive-eos` repo (ask Paul if you don't have this)
+3. **Your Anthropic licence** (you should already have this)
 
-## Getting Started
+## Setting up (one-time)
 
 ### 1. Clone the repo
 
 ```bash
-git clone git@github.com:intuitive/intuitive-eos.git
+git clone git@github.com:pauln99/intuitive-eos.git
 cd intuitive-eos
 ```
 
-### 2. Install the Google Sheets dependency (one-time)
+### 2. Install dependencies
 
 ```bash
 cd scripts && npm install && cd ..
 ```
 
-### 3. Set up Google Sheets access (one-time)
+### 3. Google Sheets access
 
-Ask Paul for the service account key file, then:
+Ask Paul for the service account key file, then add this to your `~/.zshrc`:
 
 ```bash
 export GOOGLE_SERVICE_ACCOUNT_KEY=/path/to/your/service-account-key.json
 ```
 
-Add this to your shell profile (`~/.zshrc` or `~/.bashrc`) so it persists.
-
-### 4. Launch TeamTraction
+### 4. Launch
 
 ```bash
 cd intuitive-eos
 claude
 ```
 
-That's it. Claude will detect the `CLAUDE.md` in the repo and become your TeamTraction agent.
+That's it. Claude picks up the project config automatically.
 
-## First Run
+## Your first session
 
-On your first launch, the agent will:
+The agent will ask you three things:
 
-1. Ask for your **email address** (must be your @intuitivesystems.co.uk email)
-2. Match you to the team roster
-3. Ask you to pick a **coaching style**:
-   - **Tough love** — Direct, challenging, no fluff
-   - **Socratic** — Questions that help you think sharper
-   - **Gentle** — Encouraging nudges toward better rocks
-4. Ask your preferred **weekly review day** (Friday or Monday)
-5. Set up your local config at `~/.teamtraction/`
+1. **Your email** — must be your @intuitivesystems.co.uk address
+2. **Your coaching style** — how you want to be challenged when defining rocks:
+   - **Tough love** — Direct and blunt. If your rock is weak, you'll hear about it.
+   - **Socratic** — Thoughtful questions that help you sharpen your own thinking.
+   - **Gentle** — Encouraging nudges toward clearer, stronger rocks.
+3. **Your review day** — Friday or Monday, for your weekly rock check-in.
 
-After that, you'll see the menu every time you launch.
+After that, you're set. Every future session opens with your rocks and the menu.
 
-## What You Can Do
+---
 
-### List my rocks
-See your current quarter's rocks at a glance — title, status, last update.
+## What you can do
 
-### Create a new rock
-The agent will guide you through creating a rock step by step:
-- What do you want to achieve?
-- What's the measurable outcome?
-- Is it Exciting? Clear? Deliverable?
-- What are your milestones?
-- What will be true in two weeks?
-- Pick a three-letter code for your Rock ID
+TeamTraction has a set of slash commands (skills) for different EOS activities. You can type them directly or just describe what you want — the agent will figure it out.
 
-You can have a **maximum of 3 rocks** per quarter. Quality over quantity.
+### Rock management
 
-### Work on a rock
-Pick a rock and:
-- Review progress against milestones
-- Plan your next steps
-- Strategise and think through risks
+| Command | What it does |
+|---|---|
+| `/create-rock` | Walk through creating a new quarterly Rock — outcome, E/C/D check, milestones, the lot. Max 3 per quarter. |
+| `/weekly-review` | Update status and commentary on each of your active rocks. Syncs to the team Google Sheet. |
+| `/work-on-rock` | Pick a rock and go deep — review progress against milestones, plan next steps, or strategise through blockers. |
+| `/export-rocks` | Generate a clean markdown summary of your rocks for sharing or review. |
 
-### Weekly review
-Run through each of your active rocks:
-- Set a status (Off Track / Behind, should deliver / On Track / Done / Cancelled)
-- Add a short commentary on what happened this week
-- The agent will push you for substance — "going well" isn't enough
-- Updates are saved to the repo AND written to the Google Sheet
+### Leadership tools
 
-### Export my rocks
-Generate a clean markdown summary of your rocks. Useful for sharing or reviewing.
+| Command | What it does |
+|---|---|
+| `/quarterly-planning` | End-of-quarter session. Score last quarter's rocks (done/not done), reflect on what happened, then set next quarter's rocks. |
+| `/l10-prep` | Prepare for your weekly Level 10 meeting — pulls your rock status, gathers scorecard flags, headlines, actions, and issues into a ready-to-go prep doc. |
+| `/ids` | Structured problem-solving using Identify, Discuss, Solve. Works in two modes: **meeting mode** (facilitating a group issue) or **personal mode** (thinking through a problem on your own with coaching). |
+| `/people-analyser` | Assess someone using the EOS People Analyser — core values alignment and GWC (Get it, Want it, Capacity). Confidential — nothing is saved to shared files. |
 
-## Rock ID Format
+### Admin only
 
+| Command | What it does |
+|---|---|
+| `/team-overview` | See all rocks across the whole team for the current quarter, with status and latest updates. |
+
+---
+
+## Quick tips
+
+**Writing good rocks**
+- Think outcomes, not activities. What will be TRUE at the end of the quarter?
+- "Improve customer service" is not a rock. "Average ticket response under 4 hours with new triage process live" is.
+- If you can't measure it, it's not a rock. The agent will push you on this.
+
+**The E, C, D test**
+Every rock must pass three checks before it's saved:
+- **Exciting** — Does it genuinely excite you?
+- **Clear** — Would everyone on the leadership team agree on what "done" looks like?
+- **Deliverable** — Can it realistically be finished this quarter?
+
+**The two-week milestone**
+You'll be asked: "What will be true in exactly two weeks?" This creates early momentum and catches bad rocks before it's too late. "I'll have started..." doesn't count — what will be DONE?
+
+**Weekly reviews**
+- Update every week. Consistency is what makes this useful.
+- The agent will push back on vague updates. "Going well" isn't enough — what specifically happened?
+- Be honest about status. The point is visibility, not a green dashboard.
+
+**Rock IDs**
 Each rock gets a unique ID: `{Department}_Q{n}_{year}_{TLC}`
+- Example: `Company_Q2_2026_FIN`
+- You choose the three-letter code (TLC) when creating the rock
 
-- **Department**: Company, Operations, Sales & Marketing, etc.
-- **Quarter**: Q1, Q2, Q3, Q4
-- **Year**: 2026
-- **TLC**: A three-letter code you choose (e.g. FIN for Finance System)
+**Your coaching style**
+The agent adapts to your style throughout — during rock creation, weekly reviews, IDS sessions, everything. If you want to change it, just ask.
 
-Example: `Company_Q2_2026_FIN`
+---
 
-## Tips
+## Personalisation
 
-- **Be specific.** "Improve customer service" is not a rock. "Reduce average ticket response time to under 4 hours with new triage process live" is.
-- **Think outcomes, not activities.** What will be TRUE at the end of the quarter, not what you'll be DOING.
-- **The two-week milestone matters.** It creates early momentum and catches bad rocks before it's too late.
-- **Update weekly.** The more consistently you update, the more useful this becomes for you and the team.
-- **Don't game the status.** If it's off track, say so. The point is visibility, not a green dashboard.
+Want the agent to behave differently for you? You can create a personal config file at `team/{your-slug}.claude.md`. This lets you:
+
+- Change the tone or response style
+- Add custom menu options
+- Include context about your role ("I'm covering HR until we hire")
+- Add entirely new capabilities
+
+The only things you can't override are the core rock rules (E/C/D, max 3 rocks, measurable outcomes, etc.).
+
+---
 
 ## Troubleshooting
 
 **"I can't find you in the team"**
-Your email slug doesn't match a file in `team/`. Ask Paul to add you.
+Your email doesn't match anyone in the `team/` directory. Ask Paul to add you.
 
 **Google Sheets update fails**
-Check that `GOOGLE_SERVICE_ACCOUNT_KEY` is set in your environment and points to a valid key file.
+Check that `GOOGLE_SERVICE_ACCOUNT_KEY` is set in your shell and points to the right file.
 
 **Git push fails**
-Make sure you have write access to the repo and your SSH key is set up.
+Make sure you have write access to the repo and your SSH key is configured.
+
+**A skill doesn't trigger**
+Type the slash command directly (e.g. `/ids`) or just describe what you want in plain English.
+
+---
 
 ## Questions?
 
-Ask Paul. This is a living system — feedback welcome.
+Ask Paul. This is a living system — feedback and ideas welcome.
