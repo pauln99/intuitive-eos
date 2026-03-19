@@ -3,8 +3,8 @@ name: Andy
 initials: AK
 role: CRO
 department: Customers
-coaching_style: null
-review_day: null
+coaching_style: tough_love
+review_day: monday
 is_admin: false
 reports_to: paul
 active: true
