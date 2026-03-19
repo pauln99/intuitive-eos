@@ -1,0 +1,30 @@
+id: Customers_Q2_2026_API
+title: uAPI Commercial Launch
+owner: andy
+department: Customers
+quarter: Q2_2026
+outcome: uAPI commercially launched with £200k qualified pipeline (pricing shared) and first customer signed at £40k+ ARR
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks: []
+milestones:
+  - description: Sales collateral and commercial proposition ready
+    due: 2026-04-02
+    done: false
+  - description: Launch approach executed (outreach live)
+    due: 2026-05-02
+    done: false
+  - description: First 3 follow-up meetings completed
+    due: 2026-05-16
+    done: false
+  - description: £100k pipeline at pricing-shared stage
+    due: 2026-05-30
+    done: false
+  - description: First deal signed (£40k+ ARR)
+    due: 2026-06-20
+    done: false
+two_week_milestone: Sales collateral and commercial proposition ready
+updates: []
+created_at: 2026-03-19
