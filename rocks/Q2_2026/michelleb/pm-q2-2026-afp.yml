@@ -1,0 +1,27 @@
+id: PM_Q2_2026_AFP
+title: AI-First PM Playbook
+owner: michelleb
+department: PM
+quarter: Q2_2026
+outcome: AI-first project management framework defined and documented, informed by Cruise and Yield Management learnings, ready for adoption on future AI-forward projects.
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks: []
+milestones:
+  - description: Retrospectives on Cruise and Yield Management completed and documented
+    due: 2026-04-17
+    done: false
+  - description: Playbook structure defined
+    due: 2026-05-15
+    done: false
+  - description: Draft playbook written
+    due: 2026-05-31
+    done: false
+  - description: Review and refine with Shirley
+    due: 2026-06-30
+    done: false
+two_week_milestone: Retrospectives on Cruise and Yield Management completed and documented by 17 April
+updates: []
+created_at: 2026-03-19
