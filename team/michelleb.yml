@@ -3,8 +3,8 @@ name: Michelle
 initials: MB
 role: Senior Project Manager
 department: PM
-coaching_style: null
-review_day: null
+coaching_style: gentle
+review_day: friday
 is_admin: false
 reports_to: paul
 active: true
