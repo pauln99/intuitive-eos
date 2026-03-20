@@ -1,0 +1,26 @@
+id: Company_Q2_2026_FIN
+title: "Fast, accurate month-ends with reporting suite"
+owner: paul
+department: Company
+quarter: Q2_2026
+outcome: "Month-end financials completed by 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)"
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - "Data quality and speed from Banyan"
+  - "Reporting spec needs tightening by week 2"
+milestones:
+  - description: "Team briefed, high-level targets defined, reports drafted, March data into model"
+    due: 2026-04-17
+    done: false
+  - description: "Detailed reporting specs locked, first month-end to new standard"
+    due: 2026-05-15
+    done: false
+  - description: "Full reporting suite live and month-end process embedded"
+    due: 2026-06-26
+    done: false
+two_week_milestone: "Team briefed, reports drafted, March data into model"
+updates: []
+created_at: 2026-03-20

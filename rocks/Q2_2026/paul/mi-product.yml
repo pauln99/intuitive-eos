@@ -1,0 +1,26 @@
+id: Company_Q2_2026_MIP
+title: "MI v1.0 delivered, one customer on board"
+owner: paul
+department: Company
+quarter: Q2_2026
+outcome: "MI v1.0 replacement module live with dashboarding capability, one customer using it"
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - "Universal API MVP dependency"
+  - "Customer onboarding timeline"
+milestones:
+  - description: "Feature set and mockups complete"
+    due: 2026-04-17
+    done: false
+  - description: "MI v1.0 built and tested"
+    due: 2026-05-29
+    done: false
+  - description: "One customer on board and using it"
+    due: 2026-06-26
+    done: false
+two_week_milestone: "Fully defined feature set + mockups"
+updates: []
+created_at: 2026-03-20
