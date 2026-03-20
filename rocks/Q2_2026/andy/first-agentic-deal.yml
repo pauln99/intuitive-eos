@@ -3,25 +3,25 @@ title: First Agentic Automation Deal
 owner: andy
 department: Customers
 quarter: Q2_2026
-outcome: First agentic automation PoC signed with outcome-based pricing, customer paying
+outcome: First agentic automation PoC signed with outcome-based pricing, paid, work underway
 exciting: true
 clear: true
 deliverable: true
 status: on_track
 risks: []
 milestones:
-  - description: Target use cases identified and scoped with 2-3 customers
-    due: 2026-04-15
+  - description: Target customers and use cases shortlisted, scoping conversations initiated
+    due: 2026-04-17
     done: false
-  - description: Lead customer and use case selected, PoC scope agreed
-    due: 2026-05-08
+  - description: Scoping conversations progressing, lead customer emerging
+    due: 2026-05-09
     done: false
-  - description: Paid PoC agreement signed (outcome-based pricing)
-    due: 2026-05-29
+  - description: Verbal scope agreement with decision maker
+    due: 2026-05-30
     done: false
-  - description: PoC delivered and live
-    due: 2026-06-19
+  - description: Paid PoC agreement signed, work underway
+    due: 2026-06-20
     done: false
-two_week_milestone: Target use cases identified and scoped with 2-3 customers
+two_week_milestone: Target customers and use cases shortlisted, scoping conversations initiated
 updates: []
 created_at: 2026-03-20

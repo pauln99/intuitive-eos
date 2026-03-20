@@ -22,13 +22,13 @@ No updates yet.
 **ID:** Customers_Q2_2026_AGT
 **Status:** On Track
 
-**Outcome:** First agentic automation PoC signed with outcome-based pricing, customer paying
+**Outcome:** First agentic automation PoC signed with outcome-based pricing, paid, work underway
 
 ### Milestones
-- [ ] Target use cases identified and scoped with 2-3 customers — 15 Apr 2026
-- [ ] Lead customer and use case selected, PoC scope agreed — 8 May 2026
-- [ ] Paid PoC agreement signed (outcome-based pricing) — 29 May 2026
-- [ ] PoC delivered and live — 19 Jun 2026
+- [ ] Target customers and use cases shortlisted, scoping conversations initiated — 17 Apr 2026
+- [ ] Scoping conversations progressing, lead customer emerging — 9 May 2026
+- [ ] Verbal scope agreement with decision maker — 30 May 2026
+- [ ] Paid PoC agreement signed, work underway — 20 Jun 2026
 
 ### Latest Update
 No updates yet.
