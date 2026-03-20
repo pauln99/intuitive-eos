@@ -1,0 +1,27 @@
+id: Customers_Q2_2026_AGT
+title: First Agentic Automation Deal
+owner: andy
+department: Customers
+quarter: Q2_2026
+outcome: First agentic automation PoC signed with outcome-based pricing, customer paying
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks: []
+milestones:
+  - description: Target use cases identified and scoped with 2-3 customers
+    due: 2026-04-15
+    done: false
+  - description: Lead customer and use case selected, PoC scope agreed
+    due: 2026-05-08
+    done: false
+  - description: PoC delivered and outcome-based pricing proposal presented
+    due: 2026-05-29
+    done: false
+  - description: Paid PoC agreement signed
+    due: 2026-06-19
+    done: false
+two_week_milestone: Target use cases identified and scoped with 2-3 customers
+updates: []
+created_at: 2026-03-20
