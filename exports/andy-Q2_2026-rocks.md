@@ -27,8 +27,8 @@ No updates yet.
 ### Milestones
 - [ ] Target use cases identified and scoped with 2-3 customers — 15 Apr 2026
 - [ ] Lead customer and use case selected, PoC scope agreed — 8 May 2026
-- [ ] PoC delivered and outcome-based pricing proposal presented — 29 May 2026
-- [ ] Paid PoC agreement signed — 19 Jun 2026
+- [ ] Paid PoC agreement signed (outcome-based pricing) — 29 May 2026
+- [ ] PoC delivered and live — 19 Jun 2026
 
 ### Latest Update
 No updates yet.

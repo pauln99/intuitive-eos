@@ -16,10 +16,10 @@ milestones:
   - description: Lead customer and use case selected, PoC scope agreed
     due: 2026-05-08
     done: false
-  - description: PoC delivered and outcome-based pricing proposal presented
+  - description: Paid PoC agreement signed (outcome-based pricing)
     due: 2026-05-29
     done: false
-  - description: Paid PoC agreement signed
+  - description: PoC delivered and live
     due: 2026-06-19
     done: false
 two_week_milestone: Target use cases identified and scoped with 2-3 customers
