@@ -1,0 +1,49 @@
+id: PM_Q2_2026_DPU
+title: Development Planning & Utilisation Framework
+owner: michelleb
+department: PM
+quarter: Q2_2026
+outcome: >
+  A monthly development planning process is running iteratively across dev,
+  product and infrastructure, built on an agreed capacity/utilisation/day-rate
+  revenue model, giving leadership a reliable forward view of team productivity
+  and revenue — targeting 95% team utilisation and 90% of planned revenue
+  by end of Q2.
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - Definitions not agreed with Paul early enough, undermining Q2 targets
+  - Day rate compression from deals or FOC work skewing revenue tracking
+  - Demand remains too thin to validate the model in early cycles
+milestones:
+  - description: >
+      Define and document agreed definitions for utilisation and planned
+      revenue (replacing budget as the measure) — signed off by Paul
+    due: 2026-04-03
+    done: false
+  - description: >
+      First monthly planning cycle run using the agreed model — capacity,
+      utilisation and day rate inputs populated
+    due: 2026-04-30
+    done: false
+  - description: >
+      Productivity tracking feeding into the model reliably; process backlog
+      established
+    due: 2026-05-15
+    done: false
+  - description: >
+      Second cycle complete; model refined based on learnings from cycle 1
+    due: 2026-05-31
+    done: false
+  - description: >
+      Revenue reporting tied to plan; 95% utilisation and 90% of planned
+      revenue tracked and evidenced for two consecutive months
+    due: 2026-06-30
+    done: false
+two_week_milestone: >
+  Define and document agreed definitions for utilisation and planned revenue
+  (replacing budget as the measure) — signed off by Paul by 3 April
+updates: []
+created_at: 2026-03-20
