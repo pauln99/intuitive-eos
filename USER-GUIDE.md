@@ -64,7 +64,17 @@ echo 'export GOOGLE_SERVICE_ACCOUNT_KEY=/Users/YOUR_NAME/Documents/service-accou
 source ~/.zshrc
 ```
 
-#### Step 6: Launch TeamTraction
+#### Step 6: Set up GitHub access
+
+This lets TeamTraction save your rocks to the shared repo. Paste this into Terminal and press Enter:
+
+```bash
+cd ~/Desktop/intuitive-eos && mkdir -p .claude && echo '{"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}}' > .claude/settings.local.json
+```
+
+**Replace `PASTE_TOKEN_HERE` with the token Paul gives you.** Keep it on one line.
+
+#### Step 7: Launch TeamTraction
 
 ```bash
 cd ~/Desktop/intuitive-eos
@@ -136,7 +146,17 @@ setx GOOGLE_SERVICE_ACCOUNT_KEY "C:\Users\YOUR_NAME\Documents\service-account-ke
 
 Close and reopen Command Prompt for this to take effect.
 
-#### Step 8: Launch TeamTraction
+#### Step 8: Set up GitHub access
+
+This lets TeamTraction save your rocks to the shared repo. Paste this into Command Prompt and press Enter:
+
+```cmd
+cd %USERPROFILE%\Desktop\intuitive-eos && mkdir .claude 2>nul && echo {"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}} > .claude\settings.local.json
+```
+
+**Replace `PASTE_TOKEN_HERE` with the token Paul gives you.**
+
+#### Step 9: Launch TeamTraction
 
 ```cmd
 cd %USERPROFILE%\Desktop\intuitive-eos
@@ -261,6 +281,9 @@ cd %USERPROFILE%\Desktop\intuitive-eos && git pull
 ---
 
 ## Troubleshooting
+
+**"I need a GitHub token" or rocks aren't saving**
+You're missing the GitHub PAT setup. Follow the "Set up GitHub access" step for your platform above. Ask Paul for the token.
 
 **"I can't find you in the team"**
 Your email doesn't match anyone in the team directory. Ask Paul to add you.
