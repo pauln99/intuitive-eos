@@ -8,7 +8,10 @@ exciting: true
 clear: true
 deliverable: true
 status: on_track
-risks: []
+risks:
+  - Learnings from Cruise and Yield Management are underdocumented — retrospectives may be starting from scratch rather than building on existing notes
+  - Scope creep in the playbook — retrospectives surface too much and the framework loses its AI-first focus
+  - No adoption vehicle at end of Q2 — playbook is written but no upcoming AI-forward project to apply it to
 milestones:
   - description: Retrospectives on Cruise and Yield Management completed and documented
     due: 2026-04-17
