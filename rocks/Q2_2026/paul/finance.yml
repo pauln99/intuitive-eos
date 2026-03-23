@@ -3,7 +3,7 @@ title: "Fast, accurate month-ends with reporting suite"
 owner: paul
 department: Company
 quarter: Q2_2026
-outcome: "Month-end financials completed by 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)"
+outcome: "May and June month-end financials completed by the 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)"
 exciting: true
 clear: true
 deliverable: true
@@ -21,6 +21,6 @@ milestones:
   - description: "Full reporting suite live and month-end process embedded"
     due: 2026-06-26
     done: false
-two_week_milestone: "Team briefed, reports drafted, March data into model"
+two_week_milestone: "Reporting suite fully defined — specific reports, data sources, and formats agreed"
 updates: []
 created_at: 2026-03-20

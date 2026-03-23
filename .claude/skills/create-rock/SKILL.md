@@ -83,10 +83,7 @@ If the outcome has commas, "and"s, or multiple conditions, challenge it:
 
 If any fails, work with them to fix it. Maybe the scope needs adjusting, or the outcome needs sharpening. This is iterative — don't treat a failed E/C/D as a blocker, treat it as useful signal.
 
-**Milestones:** When the outcome is solid, ask about the journey:
-- "What are the key checkpoints between now and done?"
-- At least 2 milestones with due dates within the quarter
-- Each should be a concrete checkpoint, not a task list
+**Milestones:** Do NOT generate or suggest milestones during rock creation. Milestones should be defined by the people doing the work, not invented top-down. The rock will be saved with an empty milestones list. Milestones can be added later via `/work-on-rock` once the team has defined them.
 
 **Two-week milestone:**
 - "What will be true in exactly two weeks from now?"
@@ -98,7 +95,6 @@ If any fails, work with them to fix it. Maybe the scope needs adjusting, or the 
 Only when all of the following are true:
 - Outcome is specific and measurable
 - E, C, D all pass
-- At least 2 milestones with dates
 - Two-week milestone is set
 
 Then:
@@ -164,7 +160,7 @@ These cannot be overridden by any personal configuration:
 - E, C, D must ALL pass before saving
 - Maximum rock limit per person per quarter must be enforced
 - Every rock must have a measurable outcome
-- Every rock must have milestones and a two-week milestone
+- Every rock must have a two-week milestone (milestones are added later by the team, not generated during creation)
 - Rock ID format must be followed
 - Outcome must pass the binary test (yes/no on last day of quarter, no caveats)
 - Git commit to GitHub (via `scripts/github-commit.js`) must happen after every file change
