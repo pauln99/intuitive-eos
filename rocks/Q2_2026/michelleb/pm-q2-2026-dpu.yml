@@ -1,48 +1,50 @@
 id: PM_Q2_2026_DPU
-title: Development Planning & Utilisation — Running and Delivering
+title: Development Planning & Utilisation Framework
 owner: michelleb
 department: PM
 quarter: Q2_2026
 outcome: >
-  A reliable monthly development planning process, live and running. Producing
-  the best available forward view of the month for the development team —
-  covering capacity, planned workstream and planned revenue. Tracked against
-  actual utilisation and revenue once work is fed into the month, giving clear
-  visibility on what we could do vs what we actually did, and understanding the
-  reasons for any gaps or changes. Targeting 95% team utilisation and 95% of
-  planned revenue for May and June 2026.
+  A monthly development planning process is running iteratively across dev,
+  product and infrastructure, built on an agreed capacity/utilisation/day-rate
+  revenue model, giving leadership a reliable forward view of team productivity
+  and revenue — targeting 95% team utilisation and 90% of planned revenue
+  by end of Q2.
 exciting: true
 clear: true
 deliverable: true
 status: on_track
 risks:
-  - Customer approval windows of up to 90 days make revenue work unplannable in advance
-  - Gaps in customer demand filled with roadmap work are not revenue-generating, skewing revenue targets
-  - Urgent customer requests can displace any forward view at short notice
-  - Dev overruns — if the team takes longer than planned on jobs, the entire month's plan unravels
-  - Utilisation and revenue targets are dependent on demand, which is outside Michelle's control
+  - Definitions not agreed with Paul early enough, undermining Q2 targets
+  - Day rate compression from deals or FOC work skewing revenue tracking
+  - Demand remains too thin to validate the model in early cycles
 milestones:
   - description: >
-      Planning rules and shared understanding documented — ready for Paul's
-      sign-off by 17 April
-    due: 2026-04-17
+      Define and document agreed definitions for utilisation and planned
+      revenue (replacing budget as the measure) — signed off by Paul
+    due: 2026-04-10
     done: false
   - description: >
-      May plan produced by last week of April; April actuals captured and
-      reported
-    due: 2026-04-25
+      First monthly planning cycle run using the agreed model — capacity,
+      utilisation and day rate inputs populated
+    due: 2026-04-30
     done: false
   - description: >
-      May actuals captured; June plan produced by last week of May
-    due: 2026-05-29
+      Productivity tracking feeding into the model reliably; process backlog
+      established
+    due: 2026-05-15
     done: false
   - description: >
-      May and June utilisation and revenue reported against target with
-      commentary on gaps
+      Second cycle complete; model refined based on learnings from cycle 1
+    due: 2026-05-31
+    done: false
+  - description: >
+      Revenue reporting tied to plan; 95% utilisation and 90% of planned
+      revenue tracked and evidenced for two consecutive months
     due: 2026-06-30
     done: false
 two_week_milestone: >
-  Planning rules and shared understanding documented by 10 April — ready for
-  Paul's sign-off by 17 April
+  Define and document agreed definitions for utilisation and planned revenue
+  (replacing budget as the measure) — signed off by Paul by 10 April
+signed_off: true
 updates: []
 created_at: 2026-03-20
