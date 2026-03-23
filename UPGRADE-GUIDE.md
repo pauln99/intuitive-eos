@@ -6,21 +6,7 @@ Two changes have been made to TeamTraction. If you've already been using it, ple
 
 ## 1. Set up GitHub access (2 minutes)
 
-We've improved how your rocks are saved. You now need a one-time setup step.
-
-**Mac:**
-```bash
-cd ~/Desktop/intuitive-eos && git pull && mkdir -p .claude && echo '{"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}}' > .claude/settings.local.json
-```
-
-**Windows:**
-```cmd
-cd %USERPROFILE%\Desktop\intuitive-eos && git pull && mkdir .claude 2>nul && echo {"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}} > .claude\settings.local.json
-```
-
-**Replace `PASTE_TOKEN_HERE` with the token Paul gives you.** Keep it on one line.
-
-If you don't do this, the agent will remind you when you next launch.
+We've improved how your rocks are saved. Next time you launch TeamTraction, the agent will check if you have GitHub access configured. If you don't, it'll walk you through it — just follow its instructions. You'll need a token from Paul (ask him if you don't have one).
 
 ---
 
