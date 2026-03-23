@@ -21,7 +21,7 @@ milestones:
   - description: >
       Define and document agreed definitions for utilisation and planned
       revenue (replacing budget as the measure) — signed off by Paul
-    due: 2026-04-03
+    due: 2026-04-10
     done: false
   - description: >
       First monthly planning cycle run using the agreed model — capacity,
@@ -44,6 +44,6 @@ milestones:
     done: false
 two_week_milestone: >
   Define and document agreed definitions for utilisation and planned revenue
-  (replacing budget as the measure) — signed off by Paul by 3 April
+  (replacing budget as the measure) — signed off by Paul by 10 April
 updates: []
 created_at: 2026-03-20
