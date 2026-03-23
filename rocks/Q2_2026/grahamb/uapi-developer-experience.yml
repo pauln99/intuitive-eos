@@ -27,6 +27,6 @@ milestones:
     due: 2026-06-26
     done: false
 two_week_milestone: "Documentation platform selected, and critical requirements documented"
-signed_off: false
+signed_off: true
 updates: []
 created_at: 2026-03-20
