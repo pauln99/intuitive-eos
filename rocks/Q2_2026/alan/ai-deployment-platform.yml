@@ -25,5 +25,6 @@ milestones:
     due: 2026-05-31
     done: false
 two_week_milestone: "Solution and measurements documented and agreed, architecture decided, infrastructure provisioned (April 3)"
+signed_off: true
 updates: []
 created_at: 2026-03-20

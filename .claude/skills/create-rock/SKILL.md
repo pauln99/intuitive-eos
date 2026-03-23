@@ -62,19 +62,17 @@ Push back on vague or wordy outcomes:
 - BAD: "Improve customer service" (not measurable)
 - BAD: "Work on the new API" (that's a project, not an outcome)
 - BAD: "Make progress on hiring" (what does progress mean?)
-- BAD: "Month-end financials completed by 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)" (too many conditions — split into separate rocks or pick the ONE that matters)
+- BAD: "Revenue is significantly improved across all channels" (vague — what does "significantly" mean?)
 - GOOD: "3 enterprise deals closed totalling £150k+ ARR"
 - GOOD: "New finance system live and processing all revenue"
 - GOOD: "MI v1.0 live with one customer using it"
-- GOOD: "All three dev workstreams delivered to spec"
+- GOOD: "All four dev workstreams delivered to spec"
+- GOOD: "Self-service deployment platform live, all existing tools migrated, one non-infra team member deploys a tool" (multiple conditions, but each is clearly testable)
 
 **The binary test — apply this explicitly:**
-> "Imagine it's the last day of the quarter. Can you look at this and answer yes or no, with no judgement calls or caveats?"
+> "Imagine it's the last day of the quarter. Can you look at each condition and answer yes or no, with no judgement calls or caveats?"
 
-If the outcome has commas, "and"s, or multiple conditions, challenge it:
-- Can it be split into separate rocks?
-- If not, which single condition is the one that really matters?
-- Aim for ONE sentence, ONE measurable thing
+Multiple conditions are fine — the test is whether each one is **unambiguous and clearly testable**, not whether there's only one. Push back on vagueness, not on the number of conditions.
 
 **E, C, D check:** Walk through each naturally:
 - **Exciting (E):** "Does this rock genuinely excite you? Not just important — exciting?"
