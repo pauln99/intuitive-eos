@@ -1,0 +1,17 @@
+id: DEV_Q2_2026_ABP
+title: AI Adoption & Best Practice
+owner: gordon
+department: Development
+quarter: Q2_2026
+outcome: 3 best practice areas defined, documented, and reviewed by the dev team
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - High priority issues or additional tasks from other projects competing for time
+milestones: []
+two_week_milestone: Local working version of an AI Experiment tracker for recording best practices
+signed_off: false
+updates: []
+created_at: 2026-03-23
