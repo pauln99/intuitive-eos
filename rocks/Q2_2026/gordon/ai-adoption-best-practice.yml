@@ -10,7 +10,22 @@ deliverable: true
 status: on_track
 risks:
   - High priority issues or additional tasks from other projects competing for time
-milestones: []
+milestones:
+  - description: Database created and API endpoints built
+    due: 2026-04-03
+    done: false
+  - description: All frontend pages built and working locally
+    due: 2026-04-06
+    done: false
+  - description: Deployed to internal IIS, team demo delivered
+    due: 2026-04-17
+    done: false
+  - description: First batch of experiments reviewed, first promotion decisions made
+    due: 2026-05-15
+    done: false
+  - description: 3 experiments promoted to best practice, documented and implemented
+    due: 2026-06-26
+    done: false
 two_week_milestone: Local working version of an AI Experiment tracker for recording best practices
 signed_off: false
 updates: []
