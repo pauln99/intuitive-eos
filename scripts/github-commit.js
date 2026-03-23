@@ -21,21 +21,18 @@ const REPO_ROOT = path.resolve(__dirname, "..");
 const BRANCH = "main";
 
 function getToken() {
+  // 1. Environment variable
   if (process.env.GITHUB_PAT) return process.env.GITHUB_PAT;
 
-  const configPath = path.join(
-    process.env.HOME,
-    ".teamtraction",
-    "config.yml"
-  );
-  if (fs.existsSync(configPath)) {
-    const content = fs.readFileSync(configPath, "utf8");
-    const match = content.match(/github_pat:\s*(.+)/);
+  // 2. User-level config
+  const userConfig = path.join(process.env.HOME, ".teamtraction", "config.yml");
+  if (fs.existsSync(userConfig)) {
+    const match = fs.readFileSync(userConfig, "utf8").match(/github_pat:\s*(.+)/);
     if (match) return match[1].trim();
   }
 
   throw new Error(
-    "No GitHub PAT found. Set GITHUB_PAT env var or add github_pat to ~/.teamtraction/config.yml"
+    "No GitHub PAT found. Set GITHUB_PAT env var (via .claude/settings.local.json) or add github_pat to ~/.teamtraction/config.yml"
   );
 }
 
