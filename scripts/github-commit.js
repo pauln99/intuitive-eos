@@ -101,7 +101,10 @@ async function commitFiles(filePaths, message) {
     });
 
     // Path relative to repo root — normalise to forward slashes for GitHub API
-    const repoRelPath = path.relative(REPO_ROOT, absPath).split(path.sep).join("/");
+    // Belt-and-braces: replace both path.sep AND literal backslashes,
+    // because on Windows path.sep is \ but in some shells (e.g. Git Bash)
+    // backslashes may survive as literal characters in the argument.
+    const repoRelPath = path.relative(REPO_ROOT, absPath).split(path.sep).join("/").replace(/\\/g, "/");
     treeItems.push({
       path: repoRelPath,
       mode: "100644",
