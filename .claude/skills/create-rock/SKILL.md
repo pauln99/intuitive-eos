@@ -103,7 +103,30 @@ Then:
 3. Confirm the full rock summary with the user
 4. Create the rock YAML file at the correct path
 5. **Git: commit and push** (see Git Operations below)
-6. Display the saved rock
+6. Display the saved rock using the standard rock view format:
+
+```
+### {Rock ID}
+
+# {Title}
+
+Owner      : {Name}
+Department : {Department}
+Quarter    : Q{n} {Year}
+Status     : On Track
+
+**Outcome**
+{Outcome statement}
+
+**Two-week milestone**
+{Two-week milestone}
+
+**Risks**
+- {Risk 1}
+
+**Milestones**
+*None defined yet*
+```
 
 ## Git Operations
 

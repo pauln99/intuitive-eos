@@ -36,20 +36,37 @@ For each rock:
 
 ## Output Format
 
+Use the standard rock view format for each rock:
+
 ```markdown
 # {User Name} — Q{n} {Year} Rocks
 
-## {Rock Title}
-**ID:** {Rock ID}
-**Status:** {Status}
+---
 
-**Outcome:** {Outcome statement}
+### {Rock ID}
 
-### Milestones
+# {Title}
+
+Owner      : {Name}
+Department : {Department}
+Quarter    : Q{n} {Year}
+Status     : {Status}
+
+**Outcome**
+{Outcome statement}
+
+**Two-week milestone**
+{Two-week milestone}
+
+**Risks**
+- {Risk 1}
+
+**Milestones**
 - [x] {Done milestone} — {due date}
 - [ ] {Pending milestone} — {due date}
+(or *None defined yet* if empty)
 
-### Latest Update ({date})
+**Latest update** ({date})
 {Commentary}
 
 ---

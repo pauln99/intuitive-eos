@@ -23,7 +23,27 @@ Load all the user's rocks for the current quarter. Filter to those that are NOT 
 ### Step 2: Review Each Rock
 For each active rock, in sequence:
 
-1. **Display context**: Show the rock title, current status, and last update (if any)
+1. **Display context** using the standard rock view format:
+
+```
+### {Rock ID}
+
+# {Title}
+
+Owner      : {Name}
+Department : {Department}
+Quarter    : Q{n} {Year}
+Status     : {Status}
+
+**Outcome**
+{Outcome statement}
+
+**Two-week milestone**
+{Two-week milestone}
+
+**Latest update** ({date})
+{Commentary}
+```
 2. **Ask for status**: Present the options:
    - Off Track
    - Behind, should deliver

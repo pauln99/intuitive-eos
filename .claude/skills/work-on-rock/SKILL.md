@@ -19,12 +19,36 @@ From the project context:
 List the user's active rocks and ask which one they want to work on.
 
 ### Step 2: Show Full Detail
-Display the complete rock:
-- Title and outcome statement
-- E, C, D status
-- All milestones with due dates and completion status
-- Two-week milestone
-- Update history
+Display the rock using the standard rock view format:
+
+```
+### {Rock ID}
+
+# {Title}
+
+Owner      : {Name}
+Department : {Department}
+Quarter    : Q{n} {Year}
+Status     : {Status}
+
+**Outcome**
+{Outcome statement}
+
+**Two-week milestone**
+{Two-week milestone}
+
+**Risks**
+- {Risk 1}
+- {Risk 2}
+
+**Milestones**
+- [ ] {Milestone} — {due date}
+(or *None defined yet* if empty)
+
+**Latest update** ({date})
+{Commentary}
+(or *No updates yet* if empty)
+```
 
 ### Step 3: Choose a Mode
 Offer three modes:
