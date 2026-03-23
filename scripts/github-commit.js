@@ -100,8 +100,8 @@ async function commitFiles(filePaths, message) {
       encoding: "utf-8",
     });
 
-    // Path relative to repo root
-    const repoRelPath = path.relative(REPO_ROOT, absPath);
+    // Path relative to repo root — normalise to forward slashes for GitHub API
+    const repoRelPath = path.relative(REPO_ROOT, absPath).split(path.sep).join("/");
     treeItems.push({
       path: repoRelPath,
       mode: "100644",
