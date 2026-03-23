@@ -15,7 +15,7 @@ milestones:
   - description: Process in place to flag tickets anticipated as missing unit tests (e.g. documentation wording changes) — all unflagged tickets will be expected to have tests
     due: 2026-04-07
     done: false
-  - description: Coverage at 40%
+  - description: /refactor and /unit-test Claude Code skills built and available to the development team
     due: 2026-04-14
     done: false
   - description: Coverage at 50%
@@ -27,7 +27,7 @@ milestones:
   - description: Coverage at 70%
     due: 2026-06-30
     done: false
-two_week_milestone: Coverage at 40%.
+two_week_milestone: /refactor and /unit-test Claude Code skills built and available to the development team.
 signed_off: false
 updates: []
 created_at: 2026-03-23
