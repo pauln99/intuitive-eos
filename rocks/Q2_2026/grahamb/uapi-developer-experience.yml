@@ -3,7 +3,7 @@ title: UAPI Developer Experience — Stripe-Quality Documentation for Universal 
 owner: grahamb
 department: Product Owner
 quarter: Q2_2026
-outcome: "Complete UAPI booking flow documentation published — auth, endpoints, request/response examples, and step-by-step playbook — ready for a developer to self-serve."
+outcome: "Complete UAPI developer documentation published — ORM entity reference and booking flow playbook with auth, endpoints, and code examples — ready for a developer to self-serve."
 exciting: true
 clear: true
 deliverable: true
@@ -16,6 +16,9 @@ milestones:
     done: false
   - description: Documentation platform evaluated and selected
     due: 2026-04-15
+    done: false
+  - description: ORM entity reference published — schema grouped by entity
+    due: 2026-05-15
     done: false
   - description: Core API reference published — auth, endpoints, request/response examples
     due: 2026-05-29
