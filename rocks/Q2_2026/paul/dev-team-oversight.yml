@@ -11,16 +11,7 @@ status: on_track
 risks:
   - "Team leader rock definitions not locked down early enough"
   - "External dependencies on third-party integrations"
-milestones:
-  - description: "Outcome definitions agreed with each team leader"
-    due: 2026-04-17
-    done: false
-  - description: "Mid-quarter check — all four workstreams on track against definitions"
-    due: 2026-05-15
-    done: false
-  - description: "All four workstreams delivered to agreed spec"
-    due: 2026-06-26
-    done: false
+milestones: []
 two_week_milestone: "All four team leader rocks 100% defined, agreed, progress tracking in place"
 updates: []
 created_at: 2026-03-20
