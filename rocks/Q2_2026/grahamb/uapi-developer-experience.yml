@@ -1,0 +1,29 @@
+id: Product Owner_Q2_2026_UAD
+title: UAPI Developer Experience — Stripe-Quality Documentation for Universal API
+owner: grahamb
+department: Product Owner
+quarter: Q2_2026
+outcome: "Complete UAPI booking flow documentation published — auth, endpoints, request/response examples, and step-by-step playbook — ready for a developer to self-serve."
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - Dependent on engineering delivering UAPI endpoints on a compatible timeline
+milestones:
+  - description: Engineering handover / UAPI access & Swagger docs
+    due: 2026-04-04
+    done: false
+  - description: Documentation platform evaluated and selected
+    due: 2026-04-15
+    done: false
+  - description: Core API reference published — auth, endpoints, request/response examples
+    due: 2026-05-29
+    done: false
+  - description: Booking flow playbook published
+    due: 2026-06-26
+    done: false
+two_week_milestone: "Documentation platform evaluated and selected"
+signed_off: false
+updates: []
+created_at: 2026-03-20
