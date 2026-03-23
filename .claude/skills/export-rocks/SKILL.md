@@ -31,8 +31,7 @@ For each rock:
 - **Latest update** — most recent commentary and date
 
 ### Step 3: Output
-- Save the markdown file to the project's export location
-- Commit and push
+- Save the markdown file to the project's export location (local only — no GitHub commit needed)
 - Display the content in the conversation for immediate review
 
 ## Output Format

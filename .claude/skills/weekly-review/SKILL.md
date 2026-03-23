@@ -41,7 +41,13 @@ For each active rock, in sequence:
 ### Step 3: Save Updates
 - Append updates to each rock's data file (date, status, commentary)
 - If there's an integration target (sheets, API), write updates there too
-- Commit all changes and push
+- **Git: commit to GitHub** — run:
+  ```bash
+  cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
+  git pull --rebase
+  node scripts/github-commit.js --message "Weekly review: {slug} W{week}" rocks/Q{n}_{year}/{slug}/rock1.yml rocks/Q{n}_{year}/{slug}/rock2.yml
+  ```
+  Pass ALL updated rock files as arguments (the script batches them into one commit). Check the output — if it fails, report the error to the user.
 
 ### Step 4: Summary
 Display a clean summary table of all rocks with their updated statuses and commentary.
@@ -66,3 +72,4 @@ Display a clean summary table of all rocks with their updated statuses and comme
 ## Non-Negotiable Rules
 - Every update must have both a status AND substantive commentary
 - Empty or generic updates ("fine", "going well") must be challenged
+- Git commit and push must happen after saving updates — never skip this

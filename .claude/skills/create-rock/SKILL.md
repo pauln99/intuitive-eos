@@ -56,15 +56,25 @@ If they're not ready, that's fine. Summarise what you've discussed, note the ope
 
 Once the thinking is clear, start shaping it into a rock. Work through these **in conversation, not as a checklist:**
 
-**Outcome statement:** Work with them to craft a specific, measurable outcome. The outcome must answer: "How will we know this is done?"
+**Outcome statement:** Work with them to craft a specific, measurable outcome that passes the **Binary Test**: on the last day of the quarter, can you answer **yes or no** — is this done?
 
-Push back on vague outcomes:
+Push back on vague or wordy outcomes:
 - BAD: "Improve customer service" (not measurable)
 - BAD: "Work on the new API" (that's a project, not an outcome)
 - BAD: "Make progress on hiring" (what does progress mean?)
-- GOOD: "New finance system live, processing revenue, with automated monthly reporting"
-- GOOD: "3 enterprise deals closed totalling 150k+ ARR"
-- GOOD: "Capacity planning tool built and adopted by all PMs for Q3 forecasting"
+- BAD: "Month-end financials completed by 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)" (too many conditions — split into separate rocks or pick the ONE that matters)
+- GOOD: "3 enterprise deals closed totalling £150k+ ARR"
+- GOOD: "New finance system live and processing all revenue"
+- GOOD: "MI v1.0 live with one customer using it"
+- GOOD: "All three dev workstreams delivered to spec"
+
+**The binary test — apply this explicitly:**
+> "Imagine it's the last day of the quarter. Can you look at this and answer yes or no, with no judgement calls or caveats?"
+
+If the outcome has commas, "and"s, or multiple conditions, challenge it:
+- Can it be split into separate rocks?
+- If not, which single condition is the one that really matters?
+- Aim for ONE sentence, ONE measurable thing
 
 **E, C, D check:** Walk through each naturally:
 - **Exciting (E):** "Does this rock genuinely excite you? Not just important — exciting?"
@@ -95,8 +105,23 @@ Then:
 1. Ask the user to provide a three-letter code (TLC)
 2. Format the Rock ID: `{Department}_Q{n}_{year}_{TLC}`
 3. Confirm the full rock summary with the user
-4. Create the rock data file, commit and push
-5. Display the saved rock
+4. Create the rock YAML file at the correct path
+5. **Git: commit and push** (see Git Operations below)
+6. Display the saved rock
+
+## Git Operations
+
+After ANY file change (rock creation, update), you MUST commit to GitHub using the API script:
+
+```bash
+cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
+git pull --rebase
+node scripts/github-commit.js --message "Add rock: {id}" rocks/Q{n}_{year}/{slug}/{rock-slug}.yml
+```
+
+This commits directly via the GitHub API — no `git push` needed. The script handles blob creation, tree updates, and ref advancement, then pulls locally to sync.
+
+**Do not skip this.** Run the command and check the output. If it fails, report the full error to the user — do not silently move on.
 
 ### If they're not ready to save
 
@@ -141,3 +166,5 @@ These cannot be overridden by any personal configuration:
 - Every rock must have a measurable outcome
 - Every rock must have milestones and a two-week milestone
 - Rock ID format must be followed
+- Outcome must pass the binary test (yes/no on last day of quarter, no caveats)
+- Git commit to GitHub (via `scripts/github-commit.js`) must happen after every file change

@@ -48,7 +48,13 @@ Offer three modes:
 - Help the user think about what they'd do differently if they're behind
 
 ### Step 4: Save Changes
-If milestones are updated or added during the session, save changes to the rock file, commit and push.
+If milestones are updated or added during the session, save changes to the rock file, then **commit to GitHub**:
+```bash
+cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
+git pull --rebase
+node scripts/github-commit.js --message "Update rock: {rock_id}" rocks/Q{n}_{year}/{slug}/{rock-slug}.yml
+```
+Check the output — if it fails, report the error to the user.
 
 ## Coaching Application
 Use the user's coaching style throughout. The "strategise" mode especially benefits from style-appropriate questioning:

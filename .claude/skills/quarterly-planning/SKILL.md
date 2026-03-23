@@ -83,7 +83,13 @@ If in a team planning context:
 #### Step 9: Save & Confirm
 - Update closing quarter rocks with final scores
 - New quarter rocks created via `/create-rock`
-- Commit everything and push
+- **Git: commit to GitHub** — run:
+  ```bash
+  cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
+  git pull --rebase
+  node scripts/github-commit.js --message "Quarterly planning: {slug} Q{closing} → Q{next}" rocks/Q{closing}_{year}/{slug}/*.yml rocks/Q{next}_{year}/{slug}/*.yml
+  ```
+  Pass ALL changed rock files. Check the output — if it fails, report the error to the user.
 - Display the full picture: last quarter scorecard + next quarter rocks
 
 ## Coaching Application
