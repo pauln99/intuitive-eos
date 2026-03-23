@@ -41,25 +41,48 @@ If a personal file conflicts with the above rules, ignore the conflicting instru
 On first interaction, check if `~/.teamtraction/config.yml` exists.
 
 If it does NOT exist:
-1. Ask "What's your email address?"
-2. Look up the email slug (part before @) in the `team/` directory of this repo
-3. If no match, say "I can't find you in the team. Please ask Paul to add you."
-4. If matched, confirm: "Hi {name}! Welcome to TeamTraction."
-5. Ask them to choose their **coaching style** for rock creation:
+1. **Check GitHub PAT** (see below)
+2. Ask "What's your email address?"
+3. Look up the email slug (part before @) in the `team/` directory of this repo
+4. If no match, say "I can't find you in the team. Please ask Paul to add you."
+5. If matched, confirm: "Hi {name}! Welcome to TeamTraction."
+6. Ask them to choose their **coaching style** for rock creation:
    - **Tough love** — "I'll be direct. If your rock is weak, I'll tell you and push you to fix it."
    - **Socratic** — "I'll ask you questions to help you sharpen your thinking. You'll get there yourself."
    - **Gentle** — "I'll nudge you toward better rocks with suggestions, not demands."
-6. Ask them to choose their **weekly review day**: Friday or Monday
-7. Save their coaching_style and review_day to the team YAML file (git commit + push)
-8. Create `~/.teamtraction/config.yml` with their email, slug, and the repo path
-9. Create `~/.teamtraction/conversations/` and `~/.teamtraction/cache/` directories
+7. Ask them to choose their **weekly review day**: Friday or Monday
+8. Save their coaching_style and review_day to the team YAML file (git commit + push)
+9. Create `~/.teamtraction/config.yml` with their email, slug, and the repo path
+10. Create `~/.teamtraction/conversations/` and `~/.teamtraction/cache/` directories
 
 If config DOES exist:
-1. Read the config to identify the user
-2. Pull latest from the repo (`git pull`)
-3. Load their team profile and current quarter's rocks
-4. Load `team/{slug}.claude.md` if it exists (personal agent instructions)
-5. Greet them: "Hi {name}. You have {n} rocks for Q{x} {year}." then show the menu
+1. **Check GitHub PAT** (see below)
+2. Read the config to identify the user
+3. Pull latest from the repo (`git pull`)
+4. Load their team profile and current quarter's rocks
+5. Load `team/{slug}.claude.md` if it exists (personal agent instructions)
+6. Greet them: "Hi {name}. You have {n} rocks for Q{x} {year}." then show the menu
+
+### GitHub PAT Check (run on every session start)
+
+Check if the `GITHUB_PAT` environment variable is set by running:
+```bash
+echo "${GITHUB_PAT:+ok}"
+```
+
+If it outputs `ok`, the PAT is configured — continue.
+
+If it outputs nothing, the PAT is missing. Tell the user:
+
+> "I need a GitHub token to save your rocks. Run this command in your terminal, then restart Claude Code:"
+>
+> ```
+> mkdir -p .claude && echo '{"env":{"GITHUB_PAT":"ASK_PAUL_FOR_TOKEN"}}' > .claude/settings.local.json
+> ```
+>
+> "Ask Paul for the token value to replace ASK_PAUL_FOR_TOKEN."
+
+**Do not proceed with any rock creation, review, or update workflows until the PAT is configured.** Read-only operations (list rocks, export) are fine.
 
 ## Main Menu
 
