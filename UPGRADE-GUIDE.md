@@ -1,28 +1,28 @@
 # TeamTraction — Upgrade Guide (March 2026)
 
-Two changes have been made to TeamTraction. If you've already been using it, please follow these steps to get up to date.
+A few changes have been made to TeamTraction. If you've already been using it, please follow these steps to get up to date.
 
 ---
 
-## 1. Set up GitHub access (2 minutes)
+## 1. Set up GitHub access
 
-We've improved how your rocks are saved. Next time you launch TeamTraction, the agent will check if you have GitHub access configured. If you don't, it'll walk you through it — just follow its instructions. You'll need a token from Paul (ask him if you don't have one).
+Next time you launch TeamTraction, the agent will check if you have GitHub access configured. If you don't, it'll walk you through it — just follow its instructions. You'll need a token from Paul (ask him if you don't have one).
 
 ---
 
-## 2. Review your rock outcomes (10–15 minutes)
+## 2. Review your rock outcomes and milestones
 
-We've tightened up how rock outcomes are defined. The new rule is simple:
+We've tightened up how rocks are defined. Two changes:
 
-> **On the last day of the quarter, can you answer YES or NO — is this done?**
+**Outcomes must be binary.** On the last day of the quarter, can you answer YES or NO — is this done? No judgement calls, no "mostly done", no caveats. If your outcome has multiple conditions joined by commas or "and", it needs sharpening.
 
-No judgement calls, no "mostly done", no caveats. If your outcome has multiple conditions joined by commas or "and", it probably needs sharpening.
+**Milestones have been removed.** We're keeping things simpler — just the outcome and your weekly updates.
 
 **What to do:**
 
 1. Launch TeamTraction: `cd ~/Desktop/intuitive-eos && claude`
-2. Type: **"I'd like to review my rock outcomes to make sure they pass the binary test"**
-3. The agent will walk through each of your rocks and challenge any outcomes that are too wordy or have multiple conditions
+2. Type: **"I'd like to review my rocks to make sure outcomes are well defined"**
+3. The agent will walk through each of your rocks and challenge anything that's too wordy or has multiple conditions
 4. For each one, you'll either confirm it's fine or tighten it up
 
 **Examples of what we're looking for:**
@@ -34,6 +34,14 @@ No judgement calls, no "mostly done", no caveats. If your outcome has multiple c
 | Hire three developers and have them onboarded and productive | Three developers hired and through probation |
 
 The agent will coach you through this — you don't need to figure it out alone.
+
+---
+
+## 3. Commit your changes
+
+Once you're happy with your updated rocks, tell the agent: **"Commit my rocks to GitHub"**
+
+This saves your changes so the rest of the team can see them.
 
 ---
 
