@@ -3,8 +3,8 @@ name: Fay Edwards
 initials: FE
 role: Development Team Leader
 department: Development
-coaching_style: null
-review_day: null
+coaching_style: socratic
+review_day: monday
 is_admin: false
 reports_to: paul
 active: true
