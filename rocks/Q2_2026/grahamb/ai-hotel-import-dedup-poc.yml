@@ -1,0 +1,35 @@
+id: Product Owner_Q2_2026_TPA
+title: AI-Powered Hotel Import & Management — iVector
+owner: grahamb
+department: Product Owner
+quarter: Q2_2026
+outcome: "iVector customers can import, search, and manage third-party hotel content through the new AI-powered system."
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - "AI accuracy — categorisation and deduping confidence may not be high enough"
+  - "Engineering and infrastructure readiness to integrate with iVector"
+  - "Gaps in understanding of the current import/mapping process"
+  - "Disruptive changes to the content source server database"
+milestones:
+  - description: AI categorisation rulesets established
+    due: 2026-04-15
+    done: false
+  - description: AI categorisation live on ≥2 supplier feeds
+    due: 2026-04-30
+    done: false
+  - description: New management screen with map-based search deployed
+    due: 2026-05-22
+    done: false
+  - description: Automated geography mapping and deduping functional
+    due: 2026-06-15
+    done: false
+  - description: System live for customers
+    due: 2026-06-27
+    done: false
+two_week_milestone: "AI categorisation rulesets established — initial categorisation lists and AI-generated matching rules for hotel categories from facilities and descriptions."
+signed_off: false
+updates: []
+created_at: 2026-03-20
