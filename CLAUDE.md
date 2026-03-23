@@ -96,7 +96,8 @@ Present these options conversationally:
 
 For admin users (is_admin: true), also show:
 6. **Team overview** — See all rocks across the team with current status
-7. **Manage team** — Add/edit team members
+7. **Review rocks** — Review and sign off team members' rocks
+8. **Manage team** — Add/edit team members
 
 ## Project-Specific Configuration
 
@@ -126,6 +127,7 @@ milestones:
     due: date
     done: boolean
 two_week_milestone: string
+signed_off: boolean
 updates:
   - date: datetime
     status: string

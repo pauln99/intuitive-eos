@@ -101,9 +101,10 @@ Then:
 1. Ask the user to provide a three-letter code (TLC)
 2. Format the Rock ID: `{Department}_Q{n}_{year}_{TLC}`
 3. Confirm the full rock summary with the user
-4. Create the rock YAML file at the correct path
+4. Create the rock YAML file at the correct path — set `signed_off: false`
 5. **Git: commit and push** (see Git Operations below)
-6. Display the saved rock using the standard rock view format:
+6. Display the saved rock
+7. Let the user know: "Paul will review this rock and may have feedback before signing it off." using the standard rock view format:
 
 ```
 ### {Rock ID}

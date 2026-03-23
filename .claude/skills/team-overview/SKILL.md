@@ -24,9 +24,16 @@ Load every rock for the current quarter across all team members.
 
 ### Step 3: Display Dashboard
 
-Show a summary table:
+**Show unsigned rocks first** — these need Paul's attention:
 
 ```
+⏳ AWAITING SIGN-OFF
+Department       | Owner    | Rock                    | Status    | Outcome
+-----------------+----------+-------------------------+-----------+------------------
+Development      | Gordon   | API Rebuild             | On Track  | New API live...
+Development      | Fay      | Test Automation         | On Track  | 80% coverage...
+
+✅ SIGNED OFF
 Department       | Owner    | Rock                    | Status                  | Latest Update
 -----------------+----------+-------------------------+-------------------------+------------------
 Company          | Paul     | Finance System          | On Track                | Model built...
@@ -35,6 +42,7 @@ Operations       | Alan     | Deliver £10k savings    | Behind, should deliver 
 
 ### Step 4: Offer Analysis
 After showing the table, offer:
+- **Review unsigned rocks** — jump into `/review-rocks` to review and sign off
 - **Department view** — filter by department
 - **Risk view** — show only off-track or behind rocks
 - **Stale view** — show rocks with no update in the last 2+ weeks
