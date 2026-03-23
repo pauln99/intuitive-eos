@@ -15,157 +15,68 @@ This guide will get you up and running in about 10 minutes. No programming exper
 
 ## Setting up (one-time)
 
-Follow the steps for your computer — **Mac** or **Windows**.
+### Step 1: Install a terminal
 
-### Mac setup
+We recommend **WezTerm** — it's free, fast, and works well with Claude Code.
 
-#### Step 1: Open Terminal
+1. Go to [https://wezterm.org](https://wezterm.org)
+2. Click **Download** and choose the Windows installer
+3. Run the installer — click through the defaults
 
-Press **Cmd + Space**, type **Terminal**, and hit Enter. A black/white window will appear — this is where you'll type commands.
+Once installed, open WezTerm from the Start menu. You'll see a terminal window — this is where you'll type commands.
 
-#### Step 2: Install Claude Code
-
-Paste this into Terminal and press Enter:
-
-```bash
-curl -fsSL https://claude.ai/code/install | bash
-```
-
-Follow the prompts. It will install everything needed automatically. When it's done, **close and reopen Terminal**.
-
-#### Step 3: Download the TeamTraction project
-
-Paste this into Terminal and press Enter:
-
-```bash
-cd ~/Desktop && git clone https://github.com/pauln99/intuitive-eos.git
-```
-
-> **If you see "git: command not found"**, paste the following first, then try again:
-> ```bash
-> xcode-select --install
-> ```
-> A popup will appear — click **Install** and wait for it to finish.
-
-This creates a folder called `intuitive-eos` on your Desktop.
-
-#### Step 4: Install dependencies
-
-```bash
-cd ~/Desktop/intuitive-eos/scripts && npm install && cd ..
-```
-
-#### Step 5: Google Sheets access
-
-Ask Paul for the service account key file. Save it somewhere safe (e.g. your Documents folder), then paste this into Terminal, replacing the path:
-
-```bash
-echo 'export GOOGLE_SERVICE_ACCOUNT_KEY=/Users/YOUR_NAME/Documents/service-account-key.json' >> ~/.zshrc
-source ~/.zshrc
-```
-
-#### Step 6: Set up GitHub access
-
-This lets TeamTraction save your rocks to the shared repo. Paste this into Terminal and press Enter:
-
-```bash
-cd ~/Desktop/intuitive-eos && mkdir -p .claude && echo '{"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}}' > .claude/settings.local.json
-```
-
-**Replace `PASTE_TOKEN_HERE` with the token Paul gives you.** Keep it on one line.
-
-#### Step 7: Launch TeamTraction
-
-```bash
-cd ~/Desktop/intuitive-eos
-claude
-```
-
-That's it! From now on, to start TeamTraction, just open Terminal and run:
-
-```bash
-cd ~/Desktop/intuitive-eos && claude
-```
-
-> **Tip:** You can drag the `intuitive-eos` folder from your Desktop into Terminal after typing `cd ` to avoid typing the path.
-
----
-
-### Windows setup
-
-#### Step 1: Install Node.js
+### Step 2: Install Node.js
 
 1. Go to [https://nodejs.org](https://nodejs.org)
 2. Click the big green **LTS** download button
 3. Run the installer — click Next through each step, keeping the defaults
-4. When it's done, **restart your computer**
+4. When it's done, **close and reopen WezTerm**
 
-#### Step 2: Install Git
+### Step 3: Install Git
 
 1. Go to [https://git-scm.com/downloads/win](https://git-scm.com/downloads/win)
 2. Click **Click here to download**
 3. Run the installer — click Next through each step, keeping the defaults
+4. **Close and reopen WezTerm**
 
-#### Step 3: Open a terminal
+### Step 4: Install Claude Code
 
-Press **Windows key**, type **cmd**, and click **Command Prompt**. A black window will appear.
+Paste this into WezTerm and press Enter:
 
-#### Step 4: Install Claude Code
-
-Paste this into the Command Prompt and press Enter:
-
-```cmd
+```
 npm install -g @anthropic-ai/claude-code
 ```
 
-When it finishes, close and reopen Command Prompt.
+When it finishes, close and reopen WezTerm.
 
-#### Step 5: Download the TeamTraction project
+### Step 5: Download the TeamTraction project
 
 Paste this and press Enter:
 
-```cmd
+```
 cd %USERPROFILE%\Desktop && git clone https://github.com/pauln99/intuitive-eos.git
 ```
 
 This creates a folder called `intuitive-eos` on your Desktop.
 
-#### Step 6: Install dependencies
+### Step 6: Install dependencies
 
-```cmd
+```
 cd %USERPROFILE%\Desktop\intuitive-eos\scripts && npm install && cd ..
 ```
 
-#### Step 7: Google Sheets access
+### Step 7: Launch TeamTraction
 
-Ask Paul for the service account key file. Save it somewhere safe (e.g. your Documents folder), then paste this into Command Prompt, replacing the path:
-
-```cmd
-setx GOOGLE_SERVICE_ACCOUNT_KEY "C:\Users\YOUR_NAME\Documents\service-account-key.json"
 ```
-
-Close and reopen Command Prompt for this to take effect.
-
-#### Step 8: Set up GitHub access
-
-This lets TeamTraction save your rocks to the shared repo. Paste this into Command Prompt and press Enter:
-
-```cmd
-cd %USERPROFILE%\Desktop\intuitive-eos && mkdir .claude 2>nul && echo {"env":{"GITHUB_PAT":"PASTE_TOKEN_HERE"}} > .claude\settings.local.json
-```
-
-**Replace `PASTE_TOKEN_HERE` with the token Paul gives you.**
-
-#### Step 9: Launch TeamTraction
-
-```cmd
 cd %USERPROFILE%\Desktop\intuitive-eos
 claude
 ```
 
-That's it! From now on, to start TeamTraction, just open Command Prompt and run:
+That's it! The agent will check if you have GitHub access configured — if not, it'll walk you through it. Paul will give you the token you need via Slack.
 
-```cmd
+From now on, to start TeamTraction, just open WezTerm and run:
+
+```
 cd %USERPROFILE%\Desktop\intuitive-eos && claude
 ```
 
@@ -194,9 +105,9 @@ You can type these commands directly, or just describe what you want in plain En
 
 | Command | What it does |
 |---|---|
-| `/create-rock` | Create a new quarterly Rock through conversation. Starts by exploring what matters, then shapes the outcome and milestones when the thinking is solid. No rush — it's fine to take multiple sessions. Max 3 per quarter. |
-| `/weekly-review` | Update status and commentary on each of your active rocks. Syncs to the team Google Sheet. |
-| `/work-on-rock` | Pick a rock and go deep — review progress against milestones, plan next steps, or strategise through blockers. |
+| `/create-rock` | Create a new quarterly Rock through conversation. The agent will coach you through defining a clear, measurable outcome. Max 3 per quarter. |
+| `/weekly-review` | Update status and commentary on each of your active rocks. |
+| `/work-on-rock` | Pick a rock and go deep — review progress, plan next steps, or strategise through blockers. |
 | `/export-rocks` | Generate a clean markdown summary of your rocks for sharing or review. |
 
 ### Leadership tools
@@ -204,15 +115,8 @@ You can type these commands directly, or just describe what you want in plain En
 | Command | What it does |
 |---|---|
 | `/quarterly-planning` | End-of-quarter session. Score last quarter's rocks (done/not done), reflect on what happened, then set next quarter's rocks. |
-| `/l10-prep` | Prepare for your weekly Level 10 meeting — pulls your rock status, gathers scorecard flags, headlines, actions, and issues into a ready-to-go prep doc. |
+| `/l10-prep` | Prepare for your weekly Level 10 meeting — pulls your rock status, gathers headlines, actions, and issues into a ready-to-go prep doc. |
 | `/ids` | Structured problem-solving using Identify, Discuss, Solve. Works in two modes: **meeting mode** (facilitating a group issue) or **personal mode** (thinking through a problem on your own with coaching). |
-| `/people-analyser` | Assess someone using the EOS People Analyser — core values alignment and GWC (Get it, Want it, Capacity). Confidential — nothing is saved to shared files. |
-
-### Admin only
-
-| Command | What it does |
-|---|---|
-| `/team-overview` | See all rocks across the whole team for the current quarter, with status and latest updates. |
 
 ---
 
@@ -221,7 +125,7 @@ You can type these commands directly, or just describe what you want in plain En
 **Writing good rocks**
 - Good rocks come from good conversations. Start by talking about what matters — the definition will follow.
 - Think outcomes, not activities. What will be TRUE at the end of the quarter?
-- "Improve customer service" is not a rock. "Average ticket response under 4 hours with new triage process live" is.
+- Your outcome must pass the **binary test**: on the last day of the quarter, can you answer YES or NO — is this done? No caveats.
 - If you can't measure it, it's not a rock. The agent will push you on this.
 - It's fine to take multiple sessions. A rock might start as a loose idea and get sharpened over a few conversations.
 
@@ -241,7 +145,7 @@ You'll be asked: "What will be true in exactly two weeks?" This creates early mo
 
 **Rock IDs**
 Each rock gets a unique ID: `{Department}_Q{n}_{year}_{TLC}`
-- Example: `Company_Q2_2026_FIN`
+- Example: `Development_Q2_2026_API`
 - You choose the three-letter code (TLC) when creating the rock
 
 **Your coaching style**
@@ -255,7 +159,7 @@ Want the agent to behave differently for you? Ask Paul to set up a personal conf
 
 - Change the tone or response style
 - Add custom menu options
-- Include context about your role ("I'm covering HR until we hire")
+- Include context about your role
 - Add entirely new capabilities
 
 The only things that can't be changed are the core rock rules (E/C/D, max 3 rocks, measurable outcomes, etc.).
@@ -266,15 +170,9 @@ The only things that can't be changed are the core rock rules (E/C/D, max 3 rock
 
 Each time you launch TeamTraction, it automatically pulls the latest updates. You don't need to do anything.
 
-If you ever need to manually update, open your terminal and run:
+If you ever need to manually update, open WezTerm and run:
 
-**Mac:**
-```bash
-cd ~/Desktop/intuitive-eos && git pull
 ```
-
-**Windows:**
-```cmd
 cd %USERPROFILE%\Desktop\intuitive-eos && git pull
 ```
 
@@ -283,22 +181,19 @@ cd %USERPROFILE%\Desktop\intuitive-eos && git pull
 ## Troubleshooting
 
 **"I need a GitHub token" or rocks aren't saving**
-You're missing the GitHub PAT setup. Follow the "Set up GitHub access" step for your platform above. Ask Paul for the token.
+The agent will walk you through this on first launch. If it keeps asking, check with Paul.
 
 **"I can't find you in the team"**
 Your email doesn't match anyone in the team directory. Ask Paul to add you.
 
-**Google Sheets update fails**
-Check that you set up the service account key in the setup steps above. If unsure, ask Paul.
-
-**"git: command not found" (Mac)**
-Run `xcode-select --install` in Terminal, then try again.
-
 **"npm: command not found" or "node: command not found"**
-Node.js isn't installed. Follow Step 1 (Windows) or re-run the Claude Code installer (Mac).
+Node.js isn't installed. Follow Step 2 above and restart WezTerm.
+
+**"git: command not found"**
+Git isn't installed. Follow Step 3 above and restart WezTerm.
 
 **"claude: command not found"**
-Close your terminal and open a new one. If it still doesn't work, re-run the Claude Code install step.
+Close WezTerm and open a new one. If it still doesn't work, re-run Step 4.
 
 **Nothing happens when I type a command**
 Make sure you're in the `intuitive-eos` folder before running `claude`. The agent needs to be in the project folder to pick up the configuration.
