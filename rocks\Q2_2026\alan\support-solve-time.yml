@@ -1,0 +1,29 @@
+id: Operations_Q2_2026_SST
+title: "Support Semantic Search — Reduce Resolution Time"
+owner: alan
+department: Operations
+quarter: Q2_2026
+outcome: "Average support-only ticket resolution time of 3 working days or less in June 2026, down from a 3-month baseline of 5 days (Dec-Feb). Semantic search system live and adopted, with: (1) 90% first-time resolution accuracy on tickets where a suggestion was used, and (2) relevant past tickets surfaced for at least 50% of incoming tickets."
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - "Agent adoption — tool only works if support engineers actually use the suggestions"
+  - "Data quality — poor historical ticket descriptions may produce weak embeddings"
+milestones:
+  - description: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions"
+    due: 2026-04-03
+    done: false
+  - description: "Reporting set up to track effectiveness of similarity searching"
+    due: 2026-04-17
+    done: false
+  - description: "10 issues resolved using similarity search suggestions"
+    due: 2026-04-24
+    done: false
+  - description: "Average support-only solve time at 4 working days"
+    due: 2026-05-08
+    done: false
+two_week_milestone: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions (April 3)"
+updates: []
+created_at: 2026-03-20
