@@ -12,7 +12,7 @@ risks:
   - "Agent adoption — tool only works if support engineers actually use the suggestions"
   - "Data quality — poor historical ticket descriptions may produce weak embeddings"
 milestones:
-  - description: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions"
+  - description: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions and marking usefulness"
     due: 2026-04-03
     done: false
   - description: "Reporting set up to track effectiveness of similarity searching"
@@ -24,6 +24,6 @@ milestones:
   - description: "Average support-only solve time at 4 working days"
     due: 2026-05-08
     done: false
-two_week_milestone: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions (April 3)"
+two_week_milestone: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions and marking usefulness (April 3)"
 updates: []
 created_at: 2026-03-20
