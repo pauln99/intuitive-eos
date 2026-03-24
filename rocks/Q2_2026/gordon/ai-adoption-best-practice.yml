@@ -27,6 +27,6 @@ milestones:
     due: 2026-06-13
     done: false
 two_week_milestone: Local working version of an AI Experiment tracker for recording best practices
-signed_off: false
+signed_off: true
 updates: []
 created_at: 2026-03-23
