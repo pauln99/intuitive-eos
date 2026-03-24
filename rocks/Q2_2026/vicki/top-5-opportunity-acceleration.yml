@@ -1,0 +1,32 @@
+id: Sales_Q2_2026_TOA
+title: Top 5 Opportunity Acceleration (Step-change in deal progression)
+owner: vicki
+department: Sales & Marketing
+quarter: Q2_2026
+outcome:
+  - Top 5 opportunities identified with completed account plans (stakeholder map, action plan, evaluation path, risks/objections, next steps and dates)
+  - By 30 June: 3/5 opportunities progressed to Technical/Functional Evaluation Complete and 2/5 to RFP Response/Detailed Req's Confirmed, with close paths and timelines agreed for the 2 at RFP stage
+  - Playbook documented and shared for review
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - Geopolitical instability (Middle East conflict) may slow deal progression — pressing ahead with a more proactive approach regardless
+milestones:
+  - description: Top 5 accounts locked and agreed; account plan template agreed with Stuart and Marketing
+    due: 2026-04-15
+    done: false
+  - description: 5/5 account plans completed and reviewed; next steps and meeting cadence in place for each — all tracked in HubSpot
+    due: 2026-05-08
+    done: false
+  - description: Mid-quarter checkpoint — assess indicators; what's working, what needs to change
+    due: 2026-05-31
+    done: false
+  - description: "3/5 at Technical/Functional Evaluation Complete, 2/5 at RFP Response/Detailed Req's Confirmed with close paths agreed; playbook documented and shared for review"
+    due: 2026-06-30
+    done: false
+two_week_milestone: Top 5 accounts locked and agreed; account plan template agreed with Stuart and Marketing
+signed_off: false
+updates: []
+created_at: 2026-03-24
