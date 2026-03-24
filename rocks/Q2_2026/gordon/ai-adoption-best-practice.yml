@@ -4,8 +4,9 @@ owner: gordon
 department: Development
 quarter: Q2_2026
 outcome:
-  - 5 experiments promoted to best practice
-  - Each promoted experiment documented and implemented
+  - Every developer has completed at least one experiment or backlog contribution
+  - 40 experiments completed (cumulative)
+  - 5 experiments promoted to best practice, documented and implemented
 exciting: true
 clear: true
 deliverable: true
@@ -19,20 +20,11 @@ milestones:
   - description: Deployed to internal IIS, team demo delivered
     due: 2026-04-10
     done: false
-  - description: Every developer has completed at least one experiment or backlog contribution
-    due: 2026-04-30
-    done: false
   - description: Backlog has not dropped below 3 items since launch
     due: 2026-05-23
     done: false
-  - description: 40 experiments completed (cumulative)
-    due: 2026-05-30
-    done: false
   - description: 30+ ideas in backlog
     due: 2026-06-13
-    done: false
-  - description: 5 experiments promoted to best practice, documented and implemented
-    due: 2026-06-26
     done: false
 two_week_milestone: Local working version of an AI Experiment tracker for recording best practices
 signed_off: false
