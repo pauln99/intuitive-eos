@@ -25,5 +25,8 @@ milestones:
     done: false
 two_week_milestone: All team lead pre-review time is being logged and assistance time is included in quotes
 signed_off: false
-updates: []
+updates:
+  - date: 2026-03-24T10:00:00
+    status: "review_feedback"
+    commentary: "Paul: I'd like to see an overarching outcome along the lines of '1 day of productive development output for every 1 day worked across the team in Q2'. The individual initiatives are good but need a north-star metric tying them together."
 created_at: 2026-03-24
