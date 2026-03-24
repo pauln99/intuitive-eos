@@ -5,10 +5,12 @@ department: Development
 quarter: Q2_2026
 outcome:
   - OpenAPI documentation improved — examples, default values, and full schema utilisation
-  - Login service for UI development live, integrated with iVector login via AWS Cognito
+  - Generic search capability live — iVector searches standardised and exposed through the API
   - Role-based authorisation policy implemented
   - MI API reporting and room mapping integrated
-  - Webhooks documentation and CRM support complete
+  - Login service for UI development live, integrated with iVector login via AWS Cognito
+  - Generic event system via webhooks live, starting with booking and property events
+  - Property features added to support supplier extranet — inventory, stop sales, supplier login, rates management
   - Tenant management website live — customers can manage users, API keys, and auth
 exciting: true
 clear: true
