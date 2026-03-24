@@ -3,18 +3,14 @@ title: Development Planning & Utilisation — Running and Delivering
 owner: michelleb
 department: PM
 quarter: Q2_2026
-outcome: >
-  A reliable monthly development planning process, live and running across the
-  development team. Producing the best available forward view of each month —
-  covering capacity, planned workstream and planned revenue. Tracked against
-  actual utilisation and revenue once work is fed into the month, giving clear
-  visibility on what we could do vs what we actually did, and understanding the
-  reasons for any gaps or changes.
-
-  An initial baseline April view produced by 31 March. Planning rules agreed
-  and documented by 17 April — establishing what utilisation and revenue targets
-  mean in practice. Targeting 95% team utilisation and 95% of planned revenue
-  for April, May and June 2026.
+outcome:
+  - A reliable monthly development planning process running across the development team
+  - Best available forward view each month — covering capacity, planned workstream and planned revenue
+  - Actual utilisation and revenue tracked against plan each month, with reasons for any gaps
+  - Initial baseline April view produced by 31 March
+  - Planning rules agreed and documented by 17 April
+  - 95% team utilisation for April, May and June 2026
+  - 95% of planned revenue achieved for April, May and June 2026
 exciting: true
 clear: true
 deliverable: true
@@ -26,20 +22,11 @@ risks:
   - Dev team performance issues — overruns or a decline in quality (increased PRIs) can displace planned work and impact revenue. Michelle has no control over development team productivity or output.
   - Utilisation and revenue targets are dependent on demand, which is outside Michelle's control
 milestones:
-  - description: Initial baseline April view produced
-    due: 2026-03-31
-    done: false
-  - description: Planning rules and shared understanding documented — ready for Paul's sign-off
+  - description: Planning rules documented and signed off by Paul
     due: 2026-04-17
     done: false
-  - description: May plan produced; April actuals captured and reported against target
-    due: 2026-04-25
-    done: false
-  - description: June plan produced; May actuals captured and reported against target
-    due: 2026-05-29
-    done: false
-  - description: July plan produced; June actuals captured and reported against target
-    due: 2026-06-30
+  - description: Monthly plans agreed five working days before the month begins
+    due: null
     done: false
 two_week_milestone: Initial baseline April view produced by 31 March
 signed_off: true
