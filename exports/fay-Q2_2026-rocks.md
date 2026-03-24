@@ -4,7 +4,7 @@
 **ID:** DEV_Q2_2026_UTF
 **Status:** On Track
 
-**Outcome:** Unit test coverage for new single-branch features (IV/One Branch, DF, RTM, iVector Modules e.g. Offsite Payments) reaches 70%, measured by existing script. Measurement starts fresh on April 1st, including in-progress Q1 jobs but not completed ones, to avoid over-polluting the baseline. Execution involves ongoing refactoring to make code testable, co-ordinated across developers to avoid cross-overs, supported by new /refactor and /unit-test Claude Code skills to help developers add tests rapidly.
+**Outcome:** Unit test coverage for new single-branch features (IV/One Branch, DF, RTM, iVector Modules e.g. Offsite Payments) reaches 70%, measured by existing script. Measurement starts fresh on April 1st, including in-progress Q1 jobs but not completed ones, to avoid over-polluting the baseline. Execution involves ongoing refactoring to make code testable, co-ordinated across developers to avoid cross-overs, supported by new /refactor and /unit-test Claude Code skills (with built-in feedback to track usage and success rate) to help developers add tests rapidly.
 
 ### Milestones
 - [ ] Process in place to flag tickets anticipated as missing unit tests (e.g. documentation wording changes) — all unflagged tickets will be expected to have tests — 7 Apr 2026

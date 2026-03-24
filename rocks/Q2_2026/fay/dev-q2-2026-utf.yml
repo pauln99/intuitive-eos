@@ -6,7 +6,7 @@ quarter: Q2_2026
 outcome:
   - Unit test coverage for new single-branch features reaches 70% (measured by existing script)
   - Measurement starts fresh April 1st (includes in-progress Q1 jobs, excludes completed ones)
-  - /refactor and /unit-test Claude Code skills built and available to the dev team
+  - /refactor and /unit-test Claude Code skills built and available to the dev team, with built-in feedback to track usage and success rate
 exciting: true
 clear: true
 deliverable: true
