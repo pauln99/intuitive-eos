@@ -3,7 +3,9 @@ title: First Agentic Automation Deal
 owner: andy
 department: Customers
 quarter: Q2_2026
-outcome: First agentic automation PoC signed with outcome-based pricing, paid, work underway
+outcome:
+  - First agentic automation PoC signed with outcome-based pricing
+  - PoC paid and work underway
 exciting: true
 clear: true
 deliverable: true

@@ -3,7 +3,10 @@ title: "Fast, accurate month-ends with reporting suite"
 owner: paul
 department: Company
 quarter: Q2_2026
-outcome: "May and June month-end financials completed by the 10th, adjustments <5% budget EBITDA, reporting suite built (P&L vs budget vs reforecast, delta analysis, monthly FY reforecast)"
+outcome:
+  - May and June month-end financials completed by the 10th
+  - Adjustments <5% of budget EBITDA
+  - Reporting suite built: P&L vs budget vs reforecast, delta analysis, monthly FY reforecast
 exciting: true
 clear: true
 deliverable: true

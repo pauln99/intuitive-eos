@@ -3,7 +3,10 @@ title: uAPI Commercial Launch
 owner: andy
 department: Customers
 quarter: Q2_2026
-outcome: uAPI commercially launched with £200k qualified pipeline (pricing shared) and first customer signed at £40k+ ARR
+outcome:
+  - uAPI commercially launched
+  - £200k qualified pipeline at pricing-shared stage
+  - First customer signed at £40k+ ARR
 exciting: true
 clear: true
 deliverable: true

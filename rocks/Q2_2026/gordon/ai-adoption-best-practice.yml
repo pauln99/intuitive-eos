@@ -3,7 +3,9 @@ title: AI Adoption & Best Practice
 owner: gordon
 department: Development
 quarter: Q2_2026
-outcome: 5 experiments promoted to best practice, documented and implemented
+outcome:
+  - 5 experiments promoted to best practice
+  - Each promoted experiment documented and implemented
 exciting: true
 clear: true
 deliverable: true

@@ -3,7 +3,10 @@ title: AI-First PM Playbook
 owner: michelleb
 department: PM
 quarter: Q2_2026
-outcome: AI-first project management framework defined and documented, informed by Cruise and Yield Management learnings, ready for adoption on future AI-forward projects.
+outcome:
+  - AI-first project management playbook written, informed by Cruise and Yield Management retrospectives
+  - Playbook reviewed and refined with Shirley
+  - Playbook ready for adoption on next AI-forward project
 exciting: true
 clear: true
 deliverable: true

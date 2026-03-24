@@ -3,7 +3,9 @@ title: "Oversee delivery of Development Team Rocks"
 owner: paul
 department: Company
 quarter: Q2_2026
-outcome: "All four dev workstreams have agreed outcome definitions and are delivered to spec by end of Q2"
+outcome:
+  - All four dev workstream rocks have agreed outcome definitions
+  - All four delivered to spec by end of Q2
 exciting: true
 clear: true
 deliverable: true

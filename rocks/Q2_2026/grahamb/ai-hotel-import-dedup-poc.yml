@@ -3,7 +3,9 @@ title: AI-Powered Hotel Import & Management — iVector
 owner: grahamb
 department: Product Owner
 quarter: Q2_2026
-outcome: "iVector customers can import, search, and manage third-party hotel content through the new AI-powered system."
+outcome:
+  - AI-powered hotel content system live for iVector customers
+  - Customers can import, search, and manage third-party hotel content through the system
 exciting: true
 clear: true
 deliverable: true

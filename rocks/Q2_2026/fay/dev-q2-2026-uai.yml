@@ -3,7 +3,9 @@ title: PoC AI agent builds a working iVector module on Universal API
 owner: fay
 department: Development
 quarter: Q2_2026
-outcome: A PoC AI agent builds a working iVector module on Universal API, demonstrated as a visible rendered page.
+outcome:
+  - PoC AI agent has built a working iVector module on Universal API
+  - Module demonstrated as a visible rendered page
 exciting: true
 clear: true
 deliverable: true

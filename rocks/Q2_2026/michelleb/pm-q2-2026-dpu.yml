@@ -3,12 +3,11 @@ title: Development Planning & Utilisation Framework
 owner: michelleb
 department: PM
 quarter: Q2_2026
-outcome: >
-  A monthly development planning process is running iteratively across dev,
-  product and infrastructure, built on an agreed capacity/utilisation/day-rate
-  revenue model, giving leadership a reliable forward view of team productivity
-  and revenue — targeting 95% team utilisation and 90% of planned revenue
-  by end of Q2.
+outcome:
+  - Monthly development planning process running across dev, product, and infrastructure
+  - Capacity/utilisation/day-rate revenue model agreed and in use
+  - 95% team utilisation achieved by end of Q2
+  - 90% of planned revenue tracked and evidenced for two consecutive months
 exciting: true
 clear: true
 deliverable: true

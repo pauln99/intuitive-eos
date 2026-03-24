@@ -3,7 +3,9 @@ title: "MI v1.0 delivered, one customer on board"
 owner: paul
 department: Company
 quarter: Q2_2026
-outcome: "MI v1.0 replacement module live with dashboarding capability, one customer using it"
+outcome:
+  - MI v1.0 replacement module live with dashboarding capability
+  - At least one customer using it
 exciting: true
 clear: true
 deliverable: true

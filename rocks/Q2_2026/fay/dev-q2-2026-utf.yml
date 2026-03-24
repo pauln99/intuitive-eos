@@ -3,7 +3,10 @@ title: Double unit test coverage for new single-branch features from 35% to 70%
 owner: fay
 department: Development
 quarter: Q2_2026
-outcome: Unit test coverage for new single-branch features (IV/One Branch, DF, RTM, iVector Modules e.g. Offsite Payments) reaches 70%, measured by existing script. Measurement starts fresh on April 1st, including in-progress Q1 jobs but not completed ones, to avoid over-polluting the baseline. Execution involves ongoing refactoring to make code testable, co-ordinated across developers to avoid cross-overs, supported by new /refactor and /unit-test Claude Code skills to help developers add tests rapidly.
+outcome:
+  - Unit test coverage for new single-branch features reaches 70% (measured by existing script)
+  - Measurement starts fresh April 1st (includes in-progress Q1 jobs, excludes completed ones)
+  - /refactor and /unit-test Claude Code skills built and available to the dev team
 exciting: true
 clear: true
 deliverable: true

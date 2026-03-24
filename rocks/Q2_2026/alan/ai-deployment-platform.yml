@@ -3,7 +3,11 @@ title: "Self-Service AI Tool Deployment Platform"
 owner: alan
 department: Operations
 quarter: Q2_2026
-outcome: "Self-service AI tool deployment platform live under a single domain (aitools.intuitivesystems.co.uk). All existing AI tools (~4) migrated to the platform. Any team member can deploy a new tool by uploading a package — no manual infrastructure work, no tickets to ops. The platform automates: (1) Networking & Security (DNS, TLS, network config), (2) Configuration Management, (3) Compute Setup (containers, serverless, etc.), (4) Database & Application Setup, (5) Observability."
+outcome:
+  - Self-service AI tool deployment platform live at aitools.intuitivesystems.co.uk
+  - All existing AI tools (~4) migrated to the platform
+  - At least one non-infra team member has successfully deployed a tool via self-service
+  - Platform automates networking/security, config, compute, database, and observability
 exciting: true
 clear: true
 deliverable: true
