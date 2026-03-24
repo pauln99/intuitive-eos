@@ -4,24 +4,22 @@ owner: christ
 department: Development
 quarter: Q2_2026
 outcome:
-  - Documentation tool tidy-up complete (Q1 carry-over)
-  - iVector ORM child entity support live (Q1 carry-over)
-  - iVector ORM parent metadata live (Q1 carry-over)
+  - OpenAPI documentation improved — examples, default values, and full schema utilisation
   - Login service for UI development live, integrated with iVector login via AWS Cognito
-  - Cruise booking journey API changes complete
   - Role-based authorisation policy implemented
-  - MI API reporting integrated
-  - Room mapping integrated
+  - MI API reporting and room mapping integrated
+  - Webhooks documentation and CRM support complete
+  - Tenant management website live — customers can manage users, API keys, and auth
 exciting: true
 clear: true
 deliverable: true
 status: on_track
 risks:
   - Senior dev demands on time are unpredictable and hard to plan around
-  - Cruise booking journey scope not yet defined; potential dependency on cruise team
   - Login service solution not yet finalised
+  - Tenant management website requires design input and collaboration with Product team
 milestones: []
-two_week_milestone: All three Q1 carry-over items complete and RBAC implemented
+two_week_milestone: OpenAPI documentation improved — examples, default values, and full schema utilisation complete
 signed_off: false
 updates: []
 created_at: 2026-03-24
