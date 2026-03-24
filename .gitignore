@@ -17,3 +17,5 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+scripts/node_modules/
+scripts/package-lock.json
