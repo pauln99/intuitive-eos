@@ -3,8 +3,8 @@ name: Vicki
 initials: VG
 role: Head of iVector Sales
 department: Sales & Marketing
-coaching_style: null
-review_day: null
+coaching_style: tough_love
+review_day: Friday
 is_admin: false
 reports_to: paul
 active: true
