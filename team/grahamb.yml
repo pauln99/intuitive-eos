@@ -3,8 +3,8 @@ name: Graham
 initials: GB
 role: Product Owner
 department: Product Owner
-coaching_style: null
-review_day: null
+coaching_style: tough_love
+review_day: friday
 is_admin: false
 reports_to: paul
 active: true
