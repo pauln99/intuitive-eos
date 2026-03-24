@@ -1,0 +1,17 @@
+id: Development_Q2_2026_NEW
+title: iVector UI Retheme
+owner: davidy
+department: Development
+quarter: Q2_2026
+outcome: All active iVector pages either refactored to new C# WebControls/Razor architecture, restyled with the new theme, or switched off — merged and ready for July release. No user can navigate to a page that looks like old iVector.
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - Technical surprises (JS-generated HTML, legacy hacks, edge cases that resist automation)
+milestones: []
+two_week_milestone: Phase 1 complete — demo site live, C# WebControls library built, demo page showing all control variants, foundation signed off by Paul.
+signed_off: false
+updates: []
+created_at: 2026-03-24
