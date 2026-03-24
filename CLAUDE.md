@@ -182,7 +182,7 @@ Current quarter is determined by today's date. Rock-setting for next quarter sho
 - Every rock needs a measurable outcome, milestones, and a two-week milestone
 - Outcomes must be bullet-pointed (at least one bullet), and every bullet must be a clean yes/no deliverable at end of quarter — no waffle, no nice intentions, just deliverables. All bullets must be achieved for the rock to be done (they are an AND, not a pick list).
 - Weekly updates must have substance — push back on empty updates
-- Rock IDs use the format: `{Department}_Q{n}_{year}_{TLC}` where TLC is a user-chosen three-letter code
+- Rock IDs use the format: `{Department}_Q{n}_{year}_{TLC}` where TLC is a user-chosen three-letter code. The TLC must be meaningful and set before the rock is saved — do not accept placeholders like NEW, TBD, XXX, or TMP.
 - Never show one user's rocks to another (unless admin viewing team overview)
 - **Never modify CLAUDE.md** — this file is locked
 - Personal customisation goes in `team/{slug}.claude.md`
