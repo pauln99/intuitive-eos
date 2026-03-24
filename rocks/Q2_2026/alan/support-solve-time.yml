@@ -7,7 +7,7 @@ outcome:
   - Average support-only ticket resolution time ≤3 working days in June (baseline: 5 days)
   - Semantic search system live — relevant past tickets surfaced for all incoming tickets
   - Agents mark AI-surfaced suggestions as useful ≥90% of the time
-  - Automated AI-suggested-solution email sent on every new ticket — customer helpfulness rate ≥50% (floor 20%)
+  - When agents accept an AI-suggested solution, customer acceptance rate ≥75%
 exciting: true
 clear: true
 deliverable: true
@@ -16,7 +16,7 @@ risks:
   - "Agent adoption — tool only works if support engineers actually use the suggestions"
   - "Data quality — poor historical ticket descriptions may produce weak embeddings"
 milestones:
-  - description: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions"
+  - description: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions and marking usefulness"
     due: 2026-04-03
     done: false
   - description: "Reporting set up to track effectiveness of similarity searching"
@@ -28,6 +28,6 @@ milestones:
   - description: "Average support-only solve time at 4 working days"
     due: 2026-05-08
     done: false
-two_week_milestone: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions (April 3)"
+two_week_milestone: "System live: historical tickets loaded, ongoing processing active, agents receiving suggestions and marking usefulness (April 3)"
 updates: []
 created_at: 2026-03-20
