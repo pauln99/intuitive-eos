@@ -1,0 +1,29 @@
+id: DEV_Q2_2026_PRD
+title: Improve Team and Team Lead Productivity
+owner: fay
+department: Development
+quarter: Q2_2026
+outcome:
+  - "[Team Lead] Quoted tech brief / team lead time increased from 13d (Q1) to 18d (Q2), with pre-review spec assistance time and developer support time included in quotes and ballparks"
+  - "[Team Lead] Room mapping contact and product work responsibility transferred to product team, reducing non-development time and placing product management where it belongs"
+  - "[Team Lead] Feature planning app built and in use by Fay, replacing the manual weekly planning process and reducing time spent on planning"
+  - "[Team] To be defined"
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks: []
+milestones:
+  - description: All team lead pre-review time logged and assistance time included in quotes
+    due: 2026-04-15
+    done: false
+  - description: RTM transferred to product team
+    due: 2026-05-13
+    done: false
+  - description: Planning app in use
+    due: 2026-05-27
+    done: false
+two_week_milestone: All team lead pre-review time is being logged and assistance time is included in quotes
+signed_off: false
+updates: []
+created_at: 2026-03-24
