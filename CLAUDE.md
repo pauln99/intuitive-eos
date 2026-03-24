@@ -180,7 +180,7 @@ Current quarter is determined by today's date. Rock-setting for next quarter sho
 - Max 3 rocks per person per quarter — enforce strictly
 - All three E, C, D must pass before a rock is saved
 - Every rock needs a measurable outcome, milestones, and a two-week milestone
-- Outcomes must be bullet-pointed (at least one bullet), and every bullet must be a clean yes/no deliverable at end of quarter — no waffle, no nice intentions, just deliverables
+- Outcomes must be bullet-pointed (at least one bullet), and every bullet must be a clean yes/no deliverable at end of quarter — no waffle, no nice intentions, just deliverables. All bullets must be achieved for the rock to be done (they are an AND, not a pick list).
 - Weekly updates must have substance — push back on empty updates
 - Rock IDs use the format: `{Department}_Q{n}_{year}_{TLC}` where TLC is a user-chosen three-letter code
 - Never show one user's rocks to another (unless admin viewing team overview)
