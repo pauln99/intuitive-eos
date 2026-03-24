@@ -1,0 +1,28 @@
+id: Sales_Q2_2026_UPD
+title: uAPI Positioning + Demand Gen Launch
+owner: vicki
+department: Sales & Marketing
+quarter: Q2_2026
+outcome:
+  - Market-ready uAPI positioning package delivered (messaging, proof points, new website content, uAPI-specific landing page and sales collateral)
+  - Q2 demand campaign generates 12 MQLs, 8 discovery meetings (including meetings booked for Travel Tech Show), and 5 new sales-qualified leads by 30 June — all tracked in HubSpot
+exciting: true
+clear: true
+deliverable: true
+status: on_track
+risks:
+  - Proof points dependent on input from others outside direct control
+milestones:
+  - description: Positioning and messaging signed off and sales collateral outline agreed
+    due: 2026-04-15
+    done: false
+  - description: Campaigns live; progress checkpoint toward targets (MQLs, discovery meetings, SQLs) with actions agreed to close gaps
+    due: 2026-05-31
+    done: false
+  - description: "Targets achieved: 12 MQLs → 8 discovery meetings (incl. TTS) → 5 new SQLs, all tracked in HubSpot"
+    due: 2026-06-30
+    done: false
+two_week_milestone: Positioning and messaging signed off and sales collateral outline agreed
+signed_off: false
+updates: []
+created_at: 2026-03-24
