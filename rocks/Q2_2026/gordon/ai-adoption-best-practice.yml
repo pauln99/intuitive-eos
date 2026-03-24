@@ -4,7 +4,7 @@ owner: gordon
 department: Development
 quarter: Q2_2026
 outcome:
-  - Every developer has completed at least one experiment or backlog contribution
+  - Every developer has completed at least one experiment or backlog contribution by end April
   - 40 experiments completed (cumulative)
   - 5 experiments promoted to best practice, documented and implemented
 exciting: true
