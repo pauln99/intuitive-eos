@@ -3,7 +3,7 @@ title: PropertyBooking Stability Refactor
 owner: gordon
 department: Development
 quarter: Q2_2026
-context: PropertyBooking.vb is the #1 issue-generating file in the codebase (28 issues, 42 changes) and PropertyRoomBooking.vb ranks 11th (14 issues). This rock addresses platform stability (hot risk) by breaking apart the most fragile files in the booking engine so that issues can be isolated and fixed without risk to unrelated functionality.
+context: PropertyBooking.vb is the #1 issue-generating file in the codebase (13 bug fixes, 42 changes) and PropertyRoomBooking.vb ranks 11th (9 bug fixes). This rock addresses platform stability (hot risk) by breaking apart the most fragile files in the booking engine so that issues can be isolated and fixed without risk to unrelated functionality.
 outcome:
   - PropertyBooking.vb decomposed from a monolithic class into separate classes, each handling a single booking concern
   - PropertyRoomBooking.vb decomposed from a monolithic class into separate classes, each handling a single booking concern
