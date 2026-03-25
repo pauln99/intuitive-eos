@@ -30,5 +30,8 @@ milestones:
     done: false
 two_week_milestone: "High-level concept document defined and work streams identified for delivery."
 signed_off: false
-updates: []
+updates:
+  - date: 2026-03-25T10:00:00
+    status: "review_feedback"
+    commentary: "Paul: Per email — I'd like to see real customer involvement baked into this. Identify the OneBranch (or soon-to-be OneBranch) customers who have this problem, get them on a call, understand their issues, plan the solution with them, and get them to sign it off. This should be customer-led, not built in a vacuum."
 created_at: 2026-03-20
