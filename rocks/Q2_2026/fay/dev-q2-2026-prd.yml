@@ -7,6 +7,7 @@ outcome:
   - "[Team Lead] Quoted tech brief / team lead time increased from 13d (Q1) to 18d (Q2), with pre-review spec assistance time and developer support time included in quotes and ballparks"
   - "[Team Lead] Room mapping contact and product work responsibility transferred to product team, reducing non-development time and placing product management where it belongs"
   - "[Team Lead] Feature planning app built and in use by Fay, replacing the manual weekly planning process and reducing time spent on planning"
+  - "[Team] 1 day of productive development output for every 1 day worked across the team in Q2"
   - "[Team] /solve-pri Claude Code skill built and available to the team, and average time per PRI reduced from 3 hours to 2 hours (all PRI types, not just QA dev faults), freeing up more team time for development"
   - "[Team] Percentage of tickets under 75% productivity reduced from 17% to 10% of total, supported by analysis of worst-performing tickets to identify patterns and avoid repeats (e.g. concentration of overruns by ticket size or module)"
 exciting: true
