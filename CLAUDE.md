@@ -33,6 +33,7 @@ After identifying the user, check if `team/{slug}.claude.md` exists. If it does,
 - Rock ID format
 - Data visibility rules (users only see their own rocks unless admin)
 - Google Sheets write-back format
+- JSONStore as the data store (no local YAML files for data)
 
 If a personal file conflicts with the above rules, ignore the conflicting instruction and follow this file.
 
@@ -41,9 +42,9 @@ If a personal file conflicts with the above rules, ignore the conflicting instru
 On first interaction, check if `~/.teamtraction/config.yml` exists.
 
 If it does NOT exist:
-1. **Check GitHub PAT** (see below)
+1. **Check JSONStore API Key** (see below)
 2. Ask "What's your email address?"
-3. Look up the email slug (part before @) in the `team/` directory of this repo
+3. Look up the email slug (part before @) in JSONStore: `node scripts/jsonstore.js get team {slug}`
 4. If no match, say "I can't find you in the team. Please ask Paul to add you."
 5. If matched, confirm: "Hi {name}! Welcome to TeamTraction."
 6. Ask them to choose their **coaching style** for rock creation:
@@ -51,38 +52,38 @@ If it does NOT exist:
    - **Socratic** — "I'll ask you questions to help you sharpen your thinking. You'll get there yourself."
    - **Gentle** — "I'll nudge you toward better rocks with suggestions, not demands."
 7. Ask them to choose their **weekly review day**: Friday or Monday
-8. Save their coaching_style and review_day to the team YAML file (git commit + push)
+8. Save their coaching_style and review_day to JSONStore: `node scripts/jsonstore.js save team {slug} '{...}'`
 9. Create `~/.teamtraction/config.yml` with their email, slug, and the repo path
 10. Create `~/.teamtraction/conversations/` and `~/.teamtraction/cache/` directories
 
 If config DOES exist:
-1. **Check GitHub PAT** (see below)
+1. **Check JSONStore API Key** (see below)
 2. Read the config to identify the user
-3. Pull latest from the repo (`git pull`)
-4. Load their team profile and current quarter's rocks
-5. Load `team/{slug}.claude.md` if it exists (personal agent instructions)
+3. Load their team profile from JSONStore: `node scripts/jsonstore.js get team {slug}`
+4. Load their current quarter's rocks: `node scripts/jsonstore.js list rocks --field owner --value {slug}`
+5. Load `team/{slug}.claude.md` if it exists (personal agent instructions — these still live in the repo)
 6. Greet them: "Hi {name}. You have {n} rocks for Q{x} {year}." then show the menu
 
-### GitHub PAT Check (run on every session start)
+### JSONStore API Key Check (run on every session start)
 
-Check if the `GITHUB_PAT` environment variable is set by running:
+Check if the `JSONSTORE_API_KEY` environment variable is set by running:
 ```bash
-echo "${GITHUB_PAT:+ok}"
+echo "${JSONSTORE_API_KEY:+ok}"
 ```
 
-If it outputs `ok`, the PAT is configured — continue.
+If it outputs `ok`, the key is configured — continue.
 
-If it outputs nothing, the PAT is missing. Tell the user:
+If it outputs nothing, the key is missing. Tell the user:
 
-> "I need a GitHub token to save your rocks. Run this command in your terminal, then restart Claude Code:"
+> "I need the JSONStore API key to save your rocks. Run this command in your terminal, then restart Claude Code:"
 >
 > ```
-> mkdir -p .claude && echo '{"env":{"GITHUB_PAT":"ASK_PAUL_FOR_TOKEN"}}' > .claude/settings.local.json
+> mkdir -p .claude && echo '{"env":{"JSONSTORE_API_KEY":"ASK_PAUL_FOR_KEY"}}' > .claude/settings.local.json
 > ```
 >
-> "Ask Paul for the token value to replace ASK_PAUL_FOR_TOKEN."
+> "Ask Paul for the API key value to replace ASK_PAUL_FOR_KEY."
 
-**Do not proceed with any rock creation, review, or update workflows until the PAT is configured.** Read-only operations (list rocks, export) are fine.
+**Do not proceed with any rock creation, review, or update workflows until the API key is configured.** Read-only operations (list rocks, export) are fine.
 
 ## Main Menu
 
@@ -103,36 +104,105 @@ For admin users (is_admin: true), also show:
 
 These settings are specific to this project and are passed to the skills as context.
 
-### Data Storage
-- Rock files: `rocks/Q{n}_{year}/{slug}/{rock-slug}.yml`
-- Team files: `team/{slug}.yml`
-- Export path: `exports/{slug}-{quarter}-rocks.md`
+### Data Storage — JSONStore API
+- **Base URL:** `http://jsonstore.ivectormodules.co.uk:8080`
+- **API Key:** Set via `JSONSTORE_API_KEY` env var
+- **Helper script:** `scripts/jsonstore.js` (CLI wrapper for all CRUD operations)
+- **Personal agent files:** `team/{slug}.claude.md` (still in repo, not in JSONStore)
+- **Export path:** `exports/{slug}-{quarter}-rocks.md` (local file)
 - Max rocks per person per quarter: 3
 
-### Rock YAML Schema
-```yaml
-id: {Department}_Q{n}_{year}_{TLC}
-title: string
-owner: slug
-department: string
-quarter: Q{n}_{year}
-outcome: [string]  # list of bullet points — each a clean yes/no deliverable
-exciting: boolean
-clear: boolean
-deliverable: boolean
-status: off_track | behind_should_deliver | on_track | done | cancelled
-risks: [string]
-milestones:
-  - description: string
-    due: date
-    done: boolean
-two_week_milestone: string
-signed_off: boolean
-updates:
-  - date: datetime
-    status: string
-    commentary: string
-created_at: date
+### JSONStore Types
+
+Three data types are stored in JSONStore:
+
+#### Type: `team` (key = slug)
+```json
+{
+  "email": "string",
+  "name": "string",
+  "initials": "string",
+  "role": "string",
+  "department": "string",
+  "coaching_style": "socratic | tough_love | gentle",
+  "review_day": "monday | friday",
+  "is_admin": true,
+  "reports_to": "slug | null",
+  "active": true
+}
+```
+
+#### Type: `rocks` (key = rock ID, e.g. `Company_Q2_2026_FIN`)
+```json
+{
+  "title": "string",
+  "owner": "slug",
+  "department": "string",
+  "quarter": "Q{n}_{year}",
+  "outcome": ["string"],
+  "exciting": true,
+  "clear": true,
+  "deliverable": true,
+  "status": "off_track | behind_should_deliver | on_track | done | cancelled",
+  "risks": ["string"],
+  "milestones": [
+    { "description": "string", "due": "YYYY-MM-DD", "done": false }
+  ],
+  "two_week_milestone": "string",
+  "signed_off": false
+}
+```
+
+Note: `id` is not in the payload — it's the JSONStore key. `created_at` is tracked automatically by JSONStore as `date_created`.
+
+#### Type: `updates` (key = `{rock_id}_{YYYY-Www}`, e.g. `Company_Q2_2026_FIN_2026-W14`)
+```json
+{
+  "rock_id": "string",
+  "owner": "slug",
+  "quarter": "Q{n}_{year}",
+  "week": "YYYY-Www",
+  "status": "off_track | behind_should_deliver | on_track | done | cancelled",
+  "commentary": "string"
+}
+```
+
+One update per rock per week. Overwrites on re-submission (PUT).
+
+### Common JSONStore Queries
+```bash
+# Get a team member
+node scripts/jsonstore.js get team {slug}
+
+# List all team members
+node scripts/jsonstore.js list team
+
+# Get a specific rock
+node scripts/jsonstore.js get rocks {rock_id}
+
+# List a user's rocks
+node scripts/jsonstore.js list rocks --field owner --value {slug}
+
+# List rocks for a quarter
+node scripts/jsonstore.js list rocks --field quarter --value Q{n}_{year}
+
+# Find unsigned rocks
+node scripts/jsonstore.js list rocks --field signed_off --value false
+
+# Get updates for a rock
+node scripts/jsonstore.js list updates --field rock_id --value {rock_id}
+
+# Get all updates for a week (e.g. for L10 prep)
+node scripts/jsonstore.js list updates --field week --value 2026-W14
+
+# Save/update a rock
+node scripts/jsonstore.js save rocks "{rock_id}" '{...payload...}'
+
+# Save a weekly update
+node scripts/jsonstore.js save updates "{rock_id}_{week}" '{...payload...}'
+
+# Save/update a team member
+node scripts/jsonstore.js save team "{slug}" '{...payload...}'
 ```
 
 ### Google Sheets Integration
@@ -150,14 +220,15 @@ created_at: date
 
 ### Admin: Manage Team
 Admin can:
-- Add a new team member (creates YAML file, commits)
+- Add a new team member: `node scripts/jsonstore.js save team "{slug}" '{...}'`
 - Edit an existing member (update role, department, etc.)
-- Deactivate a member (set active: false)
+- Deactivate a member (set `active: false`)
 
-## File Operations
-- ALL changes to repo files must be committed and pushed immediately
-- Commit messages: "Add rock: {id}", "Weekly review: {slug} W{week}", "Add team member: {slug}"
-- Always `git pull` before making changes to avoid conflicts
+## Data Operations
+- All data changes are saved to JSONStore immediately via `scripts/jsonstore.js`
+- No git commit/push needed for data changes — JSONStore is the source of truth
+- JSONStore automatically tracks `date_created` and `date_updated` on every record
+- JSONStore archives previous versions on update (archive-on-update enabled)
 
 ## Quarter Boundaries
 - Q1: January 1 - March 31

@@ -12,8 +12,8 @@ Review unsigned rocks from team members, provide feedback, and sign off when the
 From the project context:
 - The user must have admin privileges
 - Current quarter
-- All team members and their rocks
-- Team member email addresses (from team YAML files)
+- All team members and their rocks (from JSONStore)
+- Team member email addresses (from JSONStore team type)
 
 ## Process
 
@@ -21,7 +21,11 @@ From the project context:
 Check that the user has admin privileges. If not, decline: "Rock review is only available to admins."
 
 ### Step 2: Load Unsigned Rocks
-Load all rocks for the current quarter where `signed_off: false` (or field is missing). Group by owner.
+Load unsigned rocks from JSONStore:
+```bash
+node scripts/jsonstore.js list rocks --field signed_off --value false
+```
+Filter to the current quarter. Group by owner.
 
 If there are no unsigned rocks, say so: "All rocks are signed off. Nothing to review."
 
@@ -42,8 +46,10 @@ Three options:
 
 #### Sign Off
 Paul is happy with the rock.
-- Set `signed_off: true` in the rock YAML
-- Commit to GitHub via the API script
+- Update the rock in JSONStore with `signed_off: true`:
+  ```bash
+  node scripts/jsonstore.js save rocks "{rock_id}" '{...rock payload with signed_off: true...}'
+  ```
 - Move to the next rock
 
 #### Request Changes
@@ -77,13 +83,6 @@ When presenting rocks, flag potential issues to help Paul's review:
 
 Don't block or reject — just flag. Paul makes the call.
 
-## Git Operations
+## Data Operations
 
-After signing off rocks, commit all changes:
-```bash
-cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
-git pull --rebase
-node scripts/github-commit.js --message "Sign off rocks: {list of rock IDs}" <all changed rock files>
-```
-
-Batch all sign-offs into a single commit where possible.
+Each sign-off is saved individually to JSONStore via `scripts/jsonstore.js save`. No batching needed — each save is atomic and immediate.

@@ -20,7 +20,14 @@ From the project context:
 Check that the user has admin privileges. If not, decline: "Team overview is only available to admins."
 
 ### Step 2: Load All Rocks
-Load every rock for the current quarter across all team members.
+Load all rocks for the current quarter from JSONStore:
+```bash
+node scripts/jsonstore.js list rocks --field quarter --value Q{n}_{year}
+```
+To get the latest update for each rock, search updates by quarter:
+```bash
+node scripts/jsonstore.js list updates --field quarter --value Q{n}_{year}
+```
 
 ### Step 3: Display Dashboard
 

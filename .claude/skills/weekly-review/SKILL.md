@@ -18,7 +18,11 @@ From the project context (CLAUDE.md or config):
 ## Process
 
 ### Step 1: Load Active Rocks
-Load all the user's rocks for the current quarter. Filter to those that are NOT `done` or `cancelled`.
+Load the user's rocks from JSONStore:
+```bash
+node scripts/jsonstore.js list rocks --field owner --value {slug}
+```
+Filter results to the current quarter and exclude `done` or `cancelled` status.
 
 ### Step 2: Review Each Rock
 For each active rock, in sequence:
@@ -59,15 +63,31 @@ Status     : {Status}
    - Declined: "Moved from {old} to {new}. What happened? What's the plan to recover?"
 
 ### Step 3: Save Updates
-- Append updates to each rock's data file (date, status, commentary)
-- If there's an integration target (sheets, API), write updates there too
-- **Git: commit to GitHub** — run:
-  ```bash
-  cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
-  git pull --rebase
-  node scripts/github-commit.js --message "Weekly review: {slug} W{week}" rocks/Q{n}_{year}/{slug}/rock1.yml rocks/Q{n}_{year}/{slug}/rock2.yml
-  ```
-  Pass ALL updated rock files as arguments (the script batches them into one commit). Check the output — if it fails, report the error to the user.
+For each rock reviewed, save two things to JSONStore:
+
+1. **Create an update record** — saves the weekly status snapshot:
+   ```bash
+   node scripts/jsonstore.js save updates "{rock_id}_{YYYY-Www}" '{
+     "rock_id": "{rock_id}",
+     "owner": "{slug}",
+     "quarter": "{quarter}",
+     "week": "{YYYY-Www}",
+     "status": "{status}",
+     "commentary": "{commentary}"
+   }'
+   ```
+
+2. **Update the rock's current status** — re-save the rock with the new status:
+   ```bash
+   node scripts/jsonstore.js save rocks "{rock_id}" '{...updated rock payload with new status...}'
+   ```
+
+3. **Write to Google Sheets** (if configured):
+   ```bash
+   node scripts/sheets-update.js "{rock_id}" "{rock_title}" "{display_status}" "{commentary}"
+   ```
+
+Check all outputs — if any fail, report the error to the user.
 
 ### Step 4: Summary
 Display a clean summary table of all rocks with their updated statuses and commentary.
@@ -92,4 +112,4 @@ Display a clean summary table of all rocks with their updated statuses and comme
 ## Non-Negotiable Rules
 - Every update must have both a status AND substantive commentary
 - Empty or generic updates ("fine", "going well") must be challenged
-- Git commit and push must happen after saving updates — never skip this
+- Save to JSONStore must happen after each update — never skip this

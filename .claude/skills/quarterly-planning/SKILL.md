@@ -11,9 +11,9 @@ Facilitate the end-of-quarter retrospective and next-quarter rock-setting proces
 
 From the project context:
 - The user's identity, department, and coaching style
-- The closing quarter's rocks
+- The closing quarter's rocks (from JSONStore)
 - The upcoming quarter dates
-- Rock storage and creation config
+- Rock storage and creation config (JSONStore)
 
 ## Process
 
@@ -81,15 +81,11 @@ If in a team planning context:
 ### Part 3: Close
 
 #### Step 9: Save & Confirm
-- Update closing quarter rocks with final scores
-- New quarter rocks created via `/create-rock`
-- **Git: commit to GitHub** — run:
+- Update closing quarter rocks with final scores via JSONStore:
   ```bash
-  cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
-  git pull --rebase
-  node scripts/github-commit.js --message "Quarterly planning: {slug} Q{closing} → Q{next}" rocks/Q{closing}_{year}/{slug}/*.yml rocks/Q{next}_{year}/{slug}/*.yml
+  node scripts/jsonstore.js save rocks "{rock_id}" '{...rock payload with final status...}'
   ```
-  Pass ALL changed rock files. Check the output — if it fails, report the error to the user.
+- New quarter rocks created via `/create-rock` (which saves to JSONStore)
 - Display the full picture: last quarter scorecard + next quarter rocks
 
 ## Coaching Application

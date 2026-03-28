@@ -99,10 +99,9 @@ Then:
 1. Ask the user to provide a three-letter code (TLC)
 2. Format the Rock ID: `{Department}_Q{n}_{year}_{TLC}`
 3. Confirm the full rock summary with the user
-4. Create the rock YAML file at the correct path — set `signed_off: false`
-5. **Git: commit and push** (see Git Operations below)
-6. Display the saved rock
-7. Let the user know: "Paul will review this rock and may have feedback before signing it off." using the standard rock view format:
+4. Save the rock to JSONStore (see Data Operations below) — set `signed_off: false`
+5. Display the saved rock
+6. Let the user know: "Paul will review this rock and may have feedback before signing it off." using the standard rock view format:
 
 ```
 ### {Rock ID}
@@ -127,17 +126,15 @@ Status     : On Track
 *None defined yet*
 ```
 
-## Git Operations
+## Data Operations
 
-After ANY file change (rock creation, update), you MUST commit to GitHub using the API script:
+Save the rock to JSONStore using the helper script:
 
 ```bash
-cd /Users/paulnixon/Dropbox/Agents/IntuitiveEOS
-git pull --rebase
-node scripts/github-commit.js --message "Add rock: {id}" rocks/Q{n}_{year}/{slug}/{rock-slug}.yml
+node scripts/jsonstore.js save rocks "{rock_id}" '{JSON payload}'
 ```
 
-This commits directly via the GitHub API — no `git push` needed. The script handles blob creation, tree updates, and ref advancement, then pulls locally to sync.
+The payload must be a JSON object matching the rock schema (see CLAUDE.md). Do NOT include the `id` field in the payload — the rock ID is the key.
 
 **Do not skip this.** Run the command and check the output. If it fails, report the full error to the user — do not silently move on.
 
@@ -185,4 +182,4 @@ These cannot be overridden by any personal configuration:
 - Every rock must have a two-week milestone (milestones are added later by the team, not generated during creation)
 - Rock ID format must be followed
 - Outcome must pass the binary test (yes/no on last day of quarter, no caveats)
-- Git commit to GitHub (via `scripts/github-commit.js`) must happen after every file change
+- Save to JSONStore (via `scripts/jsonstore.js`) must happen after every data change

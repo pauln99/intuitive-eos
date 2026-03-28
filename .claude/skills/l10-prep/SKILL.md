@@ -27,7 +27,14 @@ Ask: "Any metrics off track this week? Anything to flag on the scorecard?"
 If the project has defined scorecard metrics, pull and display them. Otherwise, ask the user to note any numbers that need discussing.
 
 ### Step 3: Rock Review
-Pull the user's current rock statuses automatically from their rock files.
+Pull the user's current rock statuses from JSONStore:
+```bash
+node scripts/jsonstore.js list rocks --field owner --value {slug}
+```
+Filter to current quarter. Get latest updates:
+```bash
+node scripts/jsonstore.js list updates --field owner --value {slug}
+```
 
 Display each rock with current status. Ask:
 - "Any changes since your last update?"

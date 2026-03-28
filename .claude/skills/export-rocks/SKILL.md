@@ -18,7 +18,14 @@ From the project context:
 ## Process
 
 ### Step 1: Load Rocks
-Load all the user's rocks for the current quarter.
+Load the user's rocks from JSONStore:
+```bash
+node scripts/jsonstore.js list rocks --field owner --value {slug}
+```
+Filter to current quarter. To get the latest update for each rock:
+```bash
+node scripts/jsonstore.js list updates --field rock_id --value {rock_id}
+```
 
 ### Step 2: Generate Summary
 Create a markdown document with:
