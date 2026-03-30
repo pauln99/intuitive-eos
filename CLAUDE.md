@@ -105,7 +105,7 @@ For admin users (is_admin: true), also show:
 These settings are specific to this project and are passed to the skills as context.
 
 ### Data Storage — JSONStore API
-- **Base URL:** `http://jsonstore.ivectormodules.co.uk:8080`
+- **Base URL:** `https://jsonstore.ivectormodules.co.uk`
 - **API Key:** Set via `JSONSTORE_API_KEY` env var
 - **Helper script:** `scripts/jsonstore.js` (CLI wrapper for all CRUD operations)
 - **Personal agent files:** `team/{slug}.claude.md` (still in repo, not in JSONStore)

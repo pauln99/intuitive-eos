@@ -17,7 +17,7 @@ const fs = require("fs");
 const path = require("path");
 
 const REPO_ROOT = path.resolve(__dirname, "..");
-const BASE_URL = "http://jsonstore.ivectormodules.co.uk:8080";
+const BASE_URL = "https://jsonstore.ivectormodules.co.uk";
 
 function getApiKey() {
   const key = process.env.JSONSTORE_API_KEY;

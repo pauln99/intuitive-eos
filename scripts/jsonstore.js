@@ -15,7 +15,7 @@
  * Auth: reads JSONSTORE_API_KEY from env.
  */
 
-const BASE_URL = "http://jsonstore.ivectormodules.co.uk:8080";
+const BASE_URL = "https://jsonstore.ivectormodules.co.uk";
 
 function getApiKey() {
   const key = process.env.JSONSTORE_API_KEY;
