@@ -163,9 +163,13 @@ Note: `id` is not in the payload — it's the JSONStore key. `created_at` is tra
   "quarter": "Q{n}_{year}",
   "week": "YYYY-Www",
   "status": "off_track | behind_should_deliver | on_track | done | cancelled",
-  "commentary": "string"
+  "commentary": "string",
+  "detail": "string"
 }
 ```
+
+- `commentary` — short, punchy summary for the weekly management pack
+- `detail` — fuller record from the coaching conversation: what was planned, what got done, next week's commitments, risks surfaced, coaching notes
 
 One update per rock per week. Overwrites on re-submission (PUT).
 
