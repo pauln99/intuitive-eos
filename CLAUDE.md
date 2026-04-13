@@ -32,7 +32,6 @@ After identifying the user, check if `team/{slug}.claude.md` exists. If it does,
 - Weekly review must include status + substantive commentary
 - Rock ID format
 - Data visibility rules (users only see their own rocks unless admin)
-- Google Sheets write-back format
 - JSONStore as the data store (no local YAML files for data)
 
 If a personal file conflicts with the above rules, ignore the conflicting instruction and follow this file.
@@ -143,7 +142,7 @@ Three data types are stored in JSONStore:
   "exciting": true,
   "clear": true,
   "deliverable": true,
-  "status": "off_track | behind_should_deliver | on_track | done | cancelled",
+  "status": "off_track | behind_should_deliver | on_track | on_hold | done | cancelled",
   "risks": ["string"],
   "milestones": [
     { "description": "string", "due": "YYYY-MM-DD", "done": false }
@@ -162,7 +161,7 @@ Note: `id` is not in the payload — it's the JSONStore key. `created_at` is tra
   "owner": "slug",
   "quarter": "Q{n}_{year}",
   "week": "YYYY-Www",
-  "status": "off_track | behind_should_deliver | on_track | done | cancelled",
+  "status": "off_track | behind_should_deliver | on_track | on_hold | done | cancelled",
   "commentary": "string",
   "detail": "string"
 }
@@ -208,19 +207,6 @@ node scripts/jsonstore.js save updates "{rock_id}_{week}" '{...payload...}'
 # Save/update a team member
 node scripts/jsonstore.js save team "{slug}" '{...payload...}'
 ```
-
-### Google Sheets Integration
-- Spreadsheet ID: `1uAi5obiyxKdgqueyPLgNcmzi3ccaj9Xl6g__nGf-hzA`
-- Tab: `Rock updates`
-- Columns: A=RockID, B=Rock Name, C=Status, D=Commentary, E=Update Date & Time
-- Script: `scripts/sheets-update.js`
-- Status display mapping:
-  - `off_track` -> "Off Track"
-  - `behind_should_deliver` -> "Behind, should deliver"
-  - `on_track` -> "On Track"
-  - `done` -> "Done"
-  - `cancelled` -> "Cancelled"
-- Date format: `D MMM YYYY HH:mm` (e.g. "5 Mar 2026 13:57")
 
 ### Admin: Manage Team
 Admin can:
