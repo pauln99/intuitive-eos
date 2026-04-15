@@ -65,14 +65,30 @@ This creates a folder called `intuitive-eos` on your Desktop.
 cd %USERPROFILE%\Desktop\intuitive-eos\scripts && npm install && cd ..
 ```
 
-### Step 7: Launch TeamTraction
+### Step 7: Add your JSONStore API key
+
+TeamTraction saves your rocks to a shared store. You need a small config file with an API key before first launch.
+
+Paste this into WezTerm and press Enter (all on one line):
+
+```
+cd %USERPROFILE%\Desktop\intuitive-eos && mkdir .claude 2>nul & echo {"env":{"JSONSTORE_API_KEY":"ASK_PAUL_FOR_KEY"}}> .claude\settings.local.json
+```
+
+Then replace `ASK_PAUL_FOR_KEY` with the key Paul sends you via Slack. The easiest way:
+
+1. Open the file in Notepad: `notepad %USERPROFILE%\Desktop\intuitive-eos\.claude\settings.local.json`
+2. Replace `ASK_PAUL_FOR_KEY` with the key Paul gave you (keep the quotes)
+3. Save and close
+
+### Step 8: Launch TeamTraction
 
 ```
 cd %USERPROFILE%\Desktop\intuitive-eos
 claude
 ```
 
-That's it! The agent will check if you have GitHub access configured — if not, it'll walk you through it. Paul will give you the token you need via Slack.
+That's it! The agent will greet you and walk you through first-time setup (email, coaching style, review day).
 
 From now on, to start TeamTraction, just open WezTerm and run:
 
@@ -180,8 +196,8 @@ cd %USERPROFILE%\Desktop\intuitive-eos && git pull
 
 ## Troubleshooting
 
-**"I need a GitHub token" or rocks aren't saving**
-The agent will walk you through this on first launch. If it keeps asking, check with Paul.
+**"I need the JSONStore API key" or rocks aren't saving**
+Your `.claude\settings.local.json` file is missing or still has `ASK_PAUL_FOR_KEY` in it. Re-run Step 7 and make sure you've pasted the real key Paul gave you. After editing, close and reopen WezTerm so the new environment is picked up.
 
 **"I can't find you in the team"**
 Your email doesn't match anyone in the team directory. Ask Paul to add you.
