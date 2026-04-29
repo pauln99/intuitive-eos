@@ -74,6 +74,21 @@ Push back on vague or wordy outcomes:
 
 Multiple conditions are fine — the test is whether each one is **unambiguous and clearly testable**, not whether there's only one. Push back on vagueness, not on the number of conditions.
 
+**The ends-not-means test — apply this to every bullet:**
+> "Is this bullet describing the destination, or is it describing a step on the way?"
+
+Outcomes are *ends*, not *means*. A bullet that describes how the work gets done — a handover step, a process change, an interim deliverable — belongs in milestones, not outcomes. The giveaway: if bullet A being true would make bullet B automatically true, then B is the real outcome and A is a milestone.
+
+Challenge the user on each bullet:
+- "If the end-state bullet is achieved, isn't this one true by definition? Then it's a milestone."
+- "Is this the destination, or the route? Outcomes are destinations only."
+- BAD: "Services revenue invoicing transferred to Michelle by end of May" (a handover step — means)
+- BAD: "iVectorOne revenue process handed over by mid May" (a step toward independent month-end — means)
+- GOOD: "Banyan Finance team runs one month-end independently, signed off" (the actual end)
+- GOOD: "Month-end process completed internally each month by workday 6" (a separate, testable end-state)
+
+If you spot means-as-ends bullets, push back: name them as milestones, suggest they move into the milestones list (added later via `/work-on-rock`), and keep the outcome list to the genuine destinations.
+
 **E, C, D check:** Walk through each naturally:
 - **Exciting (E):** "Does this rock genuinely excite you? Not just important — exciting?"
 - **Clear (C):** "If I asked anyone on the leadership team what 'done' looks like for this rock, would they all give the same answer?"
