@@ -23,6 +23,25 @@ node scripts/jsonstore.js list rocks --field owner --value {slug}
 ```
 Filter results to the current quarter and exclude `done` or `cancelled` status.
 
+### Step 1a: Compute the Week Tag
+
+Updates are keyed by `{rock_id}_{YYYY-Www}` where `Www` is the ISO week. Intuitive's operating week runs **Tuesday → Monday** (the office is closed Mondays), so the week tag is computed as follows:
+
+- **Monday updates** → previous ISO week (the operating week that just ended). Compute: ISO week of (today − 1 day), or equivalently `ISO_week(today) − 1` (with year rollover handled correctly).
+- **Tuesday through Sunday updates** → current ISO week.
+
+This means a Friday update and the following Monday update both tag the **same** operating week, and re-saving on either day overwrites cleanly.
+
+Before saving, double-check the computed week against the latest existing update for the rock:
+- If the computed tag matches an existing update from earlier in the same operating week (e.g. Tue/Wed write, then a Fri review), overwriting is correct — same week.
+- If the computed tag matches an update from a *different* operating week (this should not happen with the rule above, but can if cadence has drifted historically), surface this to the user before saving rather than silently overwriting.
+
+Use this command to get the ISO week as a sanity check (zsh/bash on macOS):
+```bash
+date +"%Y-W%V"   # current ISO week
+date -v-1d +"%Y-W%V"   # previous ISO week (use on Mondays)
+```
+
 ### Step 2: Review Each Rock
 For each active rock, in sequence:
 
@@ -96,7 +115,7 @@ Status     : {Status}
 ### Step 3: Save Updates
 For each rock reviewed, save two things to JSONStore:
 
-1. **Create an update record** — saves the weekly status snapshot:
+1. **Create an update record** — saves the weekly status snapshot. Use the week tag computed in Step 1a:
    ```bash
    node scripts/jsonstore.js save updates "{rock_id}_{YYYY-Www}" '{
      "rock_id": "{rock_id}",
