@@ -5,6 +5,7 @@
 *.json
 !package.json
 !package-lock.json
+!.claude/settings.json
 
 # Environment
 .env
