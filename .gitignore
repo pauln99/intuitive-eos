@@ -1,6 +1,9 @@
 # Local user config (never committed)
 .teamtraction/
 
+# Local export artifacts — regenerated from JSONStore on demand
+exports/
+
 # Service account credentials
 *.json
 !package.json
