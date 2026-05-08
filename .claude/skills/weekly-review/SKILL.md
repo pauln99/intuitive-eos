@@ -1,11 +1,20 @@
 ---
 name: weekly-review
-description: Run a weekly EOS Rock status review. Use when the user wants to do their weekly review, update rock status, or check in on progress. Triggers on "weekly review", "check in", "update my rocks", "rock review".
+description: Run a weekly EOS Rock status review followed by a lightweight LT check-in. Use when the user wants to do their weekly review, update rock status, or check in on progress. Triggers on "weekly review", "check in", "update my rocks", "rock review".
 ---
 
-# Weekly Review — EOS Rock Status Update Skill
+# Weekly Review — EOS Rock Status Update + LT Check-in
 
-Guide the user through a coaching-driven weekly review of all their active rocks.
+Guide the user through a coaching-driven weekly review of all their active rocks, then a short, lightweight check-in on the rest of their week.
+
+## Two parts
+
+1. **Rocks review** — coaching-driven, uses the user's `coaching_style`, pushes for substance and accountability. Steps 1–4 below.
+2. **LT check-in** — a six-prompt narrative layer. **Neutral, relaxed tone — not coaching-style-driven.** Step 5 below.
+
+When starting, set expectations up front:
+
+> *"We're going to review your rocks first, then your week more generally. Let's go with the rocks."*
 
 ## Prerequisites
 
@@ -135,8 +144,97 @@ For each rock reviewed, save two things to JSONStore:
 
 Check all outputs — if any fail, report the error to the user.
 
-### Step 4: Summary
+### Step 4: Rocks Summary
 Display a clean summary table of all rocks with their updated statuses and pack commentary.
+
+### Step 5: LT Check-in
+
+After the rocks are saved and summarised, transition into the wider weekly check-in. Say something like:
+
+> *"Good — rocks done. Let's do the week more generally now. Six quick prompts, should take about five minutes. Skip any with a one-word answer if there's nothing to say."*
+
+**Tone for this section:** neutral and relaxed. Do NOT use the user's `coaching_style` here — this is a lower-temperature conversation than rock coaching. Acknowledge briefly, move on. You can softly nudge if an answer looks like a status dump, drift, or avoidance — but don't push hard. The point is honesty in five minutes, not a coaching session.
+
+#### Step 5a: Load priority projects
+
+Pull this user's active priority projects from JSONStore — Paul-flagged projects that need a specific named update each week:
+
+```bash
+node scripts/jsonstore.js list priority_projects --field owner --value {slug}
+```
+
+Filter to `status: active` only. Keep the list — used in Q2 below.
+
+#### Step 5b: Walk the six prompts
+
+Ask one prompt at a time, in order. Wait for an answer before moving on.
+
+**Q1 — How was your week?**
+> "How was your week? Just a quick summary."
+
+Capture as `summary` (freeform text).
+
+**Q2 — Priority projects**
+
+If the user has any active priority projects, walk them one by one:
+
+> "You've got [N] priority project[s] flagged. Let's go through them."
+>
+> For each: *"**{Project name} ({TLC})**. On track / off track, plus a line of commentary?"*
+
+For each project, capture: `tlc`, `name`, `status` (`on_track` | `off_track`), `commentary`.
+
+If the user has no active priority projects, skip Q2 entirely with a single line: *"No priority projects flagged for you this week — moving on."*
+
+Capture all answers as the `priority_updates` array.
+
+**Q3 — Other important projects**
+> "Any other important projects you want to flag? You don't have to list every project, just the 2 or 3 that are most important. The right answer might also be zero."
+
+Parse the freeform answer into a `[{ name, commentary }]` array. If the user lists items inline ("Stopsales — Ed is making progress"), structure them yourself. If ambiguous, ask a single clarifying question before saving. Empty answer → empty array `[]`.
+
+**Q4 — Any issue you want me to weigh in on?**
+> "Any issue you want me to weigh in on?"
+
+Capture as `issue_to_weigh_in` (freeform). Empty answer is fine — store as empty string.
+
+**Q5 — Anything else I should know?**
+> "Anything else I should know?"
+
+Capture as `other` (freeform). Empty answer is fine.
+
+**Q6 — Rate your week 1-10**
+> "Rate your week 1-10 (1=terrible, 10=awesome)."
+
+Capture as `rating` (integer 1-10). If they give a non-integer or qualitative answer, prompt once for a number.
+
+#### Step 5c: Save the check-in
+
+Use the same week tag computed in Step 1a — the LT check-in tags the same operating week as the rock updates.
+
+```bash
+node scripts/jsonstore.js save checkin "{slug}_{YYYY-Www}" '{
+  "owner": "{slug}",
+  "week": "{YYYY-Www}",
+  "summary": "{Q1 text}",
+  "priority_updates": [ { "tlc": "...", "name": "...", "status": "...", "commentary": "..." } ],
+  "other_projects": [ { "name": "...", "commentary": "..." } ],
+  "issue_to_weigh_in": "{Q4 text}",
+  "other": "{Q5 text}",
+  "rating": <1-10>,
+  "shared_with_lt": false
+}'
+```
+
+Re-saving in the same operating week overwrites cleanly.
+
+#### Step 5d: Close out
+
+Acknowledge briefly:
+
+> *"Got it — saved. Have a good week."*
+
+Don't summarise the check-in back to them — it's their data, they don't need it read back.
 
 ## Coaching During Reviews
 
